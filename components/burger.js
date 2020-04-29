@@ -58,27 +58,24 @@ const Burger = () => {
             position: relative;
             transform-origin: 1px;
           }
-          div.burger-section:first-child {
-            transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
-          }
-          .open.burger div.burger-section:nth-child(1) {
+          .open div:nth-child(1) {
             transform: rotate(45deg);
           }
-          .close.burger div.burger-section:nth-child(1) {
+          .close div:nth-child(1) {
             transform: rotate(0deg);
           }
-          .open.burger div.burger-section:nth-child(2) {
+          .open div:nth-child(2) {
             opacity: 0;
             transform: translateX(20px);
           }
-          .close.burger div.burger-section:nth-child(2) {
+          .close div:nth-child(2) {
             opacity: 1;
             transform: translateX(0);
           }
-          .open.burger div.burger-section:nth-child(3) {
+          .open div:nth-child(3) {
             transform: rotate(-45deg);
           }
-          .close.burger div.burger-section:nth-child(3) {
+          .close div:nth-child(3) {
             transform: rotate(0deg);
           }
           @media (orientation: landscape) and (max-width: 900px) {
