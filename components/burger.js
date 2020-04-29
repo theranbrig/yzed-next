@@ -1,4 +1,5 @@
 import { ModalContext } from '../utilities/context/modal';
+import theme from '../utilities/theme';
 import { useContext } from 'react';
 
 const Burger = () => {
@@ -52,7 +53,7 @@ const Burger = () => {
           div.burger-section {
             width: 2rem;
             height: 2px;
-            background: black;
+            background: ${theme.colors.black};
             transition: all 0.3s linear;
             position: relative;
             transform-origin: 1px;
