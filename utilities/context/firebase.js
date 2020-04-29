@@ -15,18 +15,19 @@ const dbh = firebase.firestore();
 // if (messaging) {
 //   messaging.usePublicVapidKey(process.env.REACT_APP_fcm_key);
 // }
-const initialUserState = {
-  id: '',
-  loggedIn: false,
-  userName: '',
-  role: '',
-  description: '',
-  photo: [],
-  followers: [],
-  favoriteProducts: [],
-};
 
 const FirebaseProvider = ({ children }) => {
+  const initialUserState = {
+    id: '',
+    loggedIn: false,
+    userName: '',
+    role: '',
+    description: '',
+    photo: [],
+    followers: [],
+    favoriteProducts: [],
+  };
+
   const [firebaseError, setFirebaseError] = useState('');
   const [userLoading, setUserLoading] = useState(true);
   const [userValidated, setUserValidated] = useState(false);

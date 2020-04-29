@@ -1,16 +1,20 @@
+import Burger from './burger';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Link from 'next/link';
 import YzedLogo from './yzed_logo';
 
 function Layout({ children }) {
   const { userData } = React.useContext(FirebaseContext);
-  console.log('Nav', userData);
+
   return (
     <>
       <div className='layout-container'>
         <div className='top-nav-bar'>
+          <Burger />
           <Link href='/'>
-            <YzedLogo />
+            <a>
+              <img src='icons/logo.svg' />
+            </a>
           </Link>
         </div>
         {children}
@@ -25,11 +29,9 @@ function Layout({ children }) {
           flex-direction: row;
           justify-content: center;
         }
-      `}</style>
-      <style jsx global>{`
-        svg {
-          height: 6vh;
-          margin-top: 2vh;
+        img {
+          height: 5vh;
+          margin-top: 2.5vh;
         }
       `}</style>
     </>
