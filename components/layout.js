@@ -1,6 +1,7 @@
 import Burger from './burger';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Link from 'next/link';
+import MenuLinks from './menuLinks';
 import YzedLogo from './yzed_logo';
 
 function Layout({ children }) {
@@ -11,6 +12,7 @@ function Layout({ children }) {
       <div className='layout-container'>
         <div className='top-nav-bar'>
           <Burger />
+          <MenuLinks />
           <Link href='/'>
             <a>
               <img src='icons/logo.svg' alt='YZED word mark' />
