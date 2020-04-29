@@ -13,7 +13,7 @@ function Layout({ children }) {
           <Burger />
           <Link href='/'>
             <a>
-              <img src='icons/logo.svg' />
+              <img src='icons/logo.svg' alt='YZED word mark' />
             </a>
           </Link>
         </div>
@@ -28,10 +28,10 @@ function Layout({ children }) {
           display: flex;
           flex-direction: row;
           justify-content: center;
+          align-items: center;
         }
         img {
-          height: 5vh;
-          margin-top: 2.5vh;
+          height: 2rem;
         }
       `}</style>
     </>

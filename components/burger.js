@@ -34,7 +34,6 @@ const Burger = () => {
         {`
           .burger {
             position: fixed;
-            top: calc(5vh - 1rem);
             left: 10px;
             display: flex;
             flex-direction: column;
