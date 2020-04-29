@@ -1,11 +1,17 @@
 // import App from 'next/app';
 import FirebaseProvider from '../utilities/context/firebase';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <FirebaseProvider>
-      <Component {...pageProps} />
-    </FirebaseProvider>
+    <>
+      <Head>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
+      <FirebaseProvider>
+        <Component {...pageProps} />
+      </FirebaseProvider>
+    </>
   );
 }
 

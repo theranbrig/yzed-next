@@ -232,7 +232,7 @@ const FirebaseProvider = ({ children }) => {
             }
           });
       } else {
-        callback(initialUserState);
+        callback(initialUserData);
         setUserLoading(false);
       }
     });
