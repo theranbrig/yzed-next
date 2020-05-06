@@ -127,7 +127,6 @@ const Login = () => {
             max-width: 95%;
             margin: 0 auto;
             background: ${theme.colors.white};
-            padding-top: calc(10vh);
             font-family: ${theme.fonts.main};
           }
           form {

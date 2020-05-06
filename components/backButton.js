@@ -15,7 +15,7 @@ const BackButton = ({ link }) => {
             if (link) {
               router.push(link);
             } else {
-              router.goBack();
+              router.back();
             }
             setFirebaseError('');
           }}
