@@ -1,8 +1,7 @@
-// import { Link, useHistory } from 'react-router-dom';
 import React, { useContext, useEffect, useState } from 'react';
 
 import Div100vh from 'react-div-100vh';
-// import Error from '../components/Error';
+import Error from '../components/error';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Head from 'next/head';
 import Layout from '../components/layout';
@@ -76,20 +75,22 @@ const Login = () => {
                   </button>
                 </form>
                 <div className='forgot'>
-                  <Link href='/request_reset'>I forgot my password.</Link>
+                  <Link href='/request_reset'>
+                    <a>I forgot my password.</a>
+                  </Link>
                 </div>
                 <div className='forgot'>
                   <p>
-                    {/* <Link to='/verified'>
-                    <a>Can't log in? Send email validation request again.</a>
-                  </Link> */}
+                    <Link href='/verified'>
+                      <a>Can't log in? Send email validation request again.</a>
+                    </Link>
                   </p>
                 </div>
-                {/* {firebaseError && (
-              <div className='error'>
-              <Error error={firebaseError} />
-              </div>
-              )}*/}
+                {firebaseError && (
+                  <div className='error'>
+                    <Error error={firebaseError} />
+                  </div>
+                )}
               </section>
               <div className='bottom'>
                 <div className='bottom-content'>
@@ -136,7 +137,7 @@ const Login = () => {
           input {
             font-family: ${theme.fonts.main};
             display: block;
-            width: calc(90% - 20px);
+            width: calc(90%);
             height: 40px;
             border-radius: 20px;
             box-shadow: none;
@@ -153,11 +154,10 @@ const Login = () => {
           .valid input {
             color: mediumSeaGreen;
           }
-          ::placeholder {
-            color: ${theme.colors.lightGrey};
+          input::placeholder {
+            color: ${theme.colors.grey};
             font-weight: 300;
           }
-
           .error {
             width: 90%;
             margin: 0 auto;
@@ -182,7 +182,6 @@ const Login = () => {
             padding: 0 0 5px 0;
             color: ${theme.colors.grey};
           }
-
           .bottom {
             position: fixed;
             bottom: 0;
