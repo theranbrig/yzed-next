@@ -20,7 +20,7 @@ const BackButton = ({ link }) => {
             setFirebaseError('');
           }}
           aria-label='Back Button'>
-          <img src='./icons/chevron-left.svg' alt='chevron left' />
+          <img className='chevron' src='./icons/chevron-left.svg' alt='chevron left' />
         </button>
       </div>
       <style jsx>{`

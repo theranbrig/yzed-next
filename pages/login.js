@@ -36,72 +36,70 @@ const Login = () => {
           initial={{ opacity: 0, x: '100vw' }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ type: 'spring', ease: 'easeIn', duration: 1, mass: 0.5 }}>
-          <Div100vh>
-            <div className='page-container'>
-              <section className='top'>
-                <TopTitle title='Log In' />
-                <form
-                  className='user-form'
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    loginUser(email, password);
-                  }}>
-                  <div className='form-input'>
-                    <input
-                      aria-label='email'
-                      name='email'
-                      type='email'
-                      value={email}
-                      placeholder='Enter Email'
-                      required
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
-                  <div className='form-input'>
-                    <input
-                      aria-label='password'
-                      name='password'
-                      type='password'
-                      placeholder='Enter Password'
-                      required
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                  </div>
-                  <button
-                    className='submit-button'
-                    type='submit'
-                    disabled={!password.length || !email.length}>
-                    SIGN IN
-                  </button>
-                </form>
-                <div className='forgot'>
-                  <Link href='/request_reset'>
-                    <a>I forgot my password.</a>
+          <div className='page-container'>
+            <section className='top'>
+              <TopTitle title='Log In' />
+              <form
+                className='user-form'
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  loginUser(email, password);
+                }}>
+                <div className='form-input'>
+                  <input
+                    aria-label='email'
+                    name='email'
+                    type='email'
+                    value={email}
+                    placeholder='Enter Email'
+                    required
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className='form-input'>
+                  <input
+                    aria-label='password'
+                    name='password'
+                    type='password'
+                    placeholder='Enter Password'
+                    required
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <button
+                  className='submit-button'
+                  type='submit'
+                  disabled={!password.length || !email.length}>
+                  SIGN IN
+                </button>
+              </form>
+              <div className='forgot'>
+                <Link href='/request_reset'>
+                  <a>I forgot my password.</a>
+                </Link>
+              </div>
+              <div className='forgot'>
+                <p>
+                  <Link href='/verified'>
+                    <a>Can't log in? Send email validation request again.</a>
                   </Link>
+                </p>
+              </div>
+              {firebaseError && (
+                <div className='error'>
+                  <Error error={firebaseError} />
                 </div>
-                <div className='forgot'>
-                  <p>
-                    <Link href='/verified'>
-                      <a>Can't log in? Send email validation request again.</a>
-                    </Link>
-                  </p>
-                </div>
-                {firebaseError && (
-                  <div className='error'>
-                    <Error error={firebaseError} />
-                  </div>
-                )}
-              </section>
-              <div className='bottom'>
-                <div className='bottom-content'>
-                  <p>Want to become a YZER?</p>
-                  <Link href='/register'>
-                    <a>Sign Up Now</a>
-                  </Link>
-                </div>
+              )}
+            </section>
+            <div className='bottom'>
+              <div className='bottom-content'>
+                <p>Want to become a YZER?</p>
+                <Link href='/register'>
+                  <a>Sign Up Now</a>
+                </Link>
               </div>
             </div>
-          </Div100vh>
+          </div>
         </motion.div>
       </Layout>
       <style jsx>
@@ -211,15 +209,6 @@ const Login = () => {
             max-width: 90%;
             margin: 0 auto;
             padding-bottom: 20px;
-          }
-
-          .success {
-            text-align: center;
-          }
-          .success svg {
-            height: 100px;
-            display: block;
-            margin: 0 auto;
           }
         `}
       </style>
