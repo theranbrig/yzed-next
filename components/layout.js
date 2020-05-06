@@ -27,8 +27,8 @@ function Layout({ children }) {
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-            Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+          font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         }
         * {
           box-sizing: border-box;
@@ -52,6 +52,7 @@ function Layout({ children }) {
         }
         .main-content {
           padding-top: 10vh;
+          min-height: 90vh;
         }
       `}</style>
     </>

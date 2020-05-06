@@ -124,6 +124,7 @@ const Login = () => {
           .page-container {
             width: 500px;
             max-width: 95%;
+            min-height: 90vh;
             margin: 0 auto;
             background: ${theme.colors.white};
             font-family: ${theme.fonts.main};
