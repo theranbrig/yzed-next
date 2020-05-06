@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import Div100vh from 'react-div-100vh';
-import Error from '../components/Error';
+import Error from '../components/error';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Head from 'next/head';
 import Layout from '../components/layout';
-import TopTitle from '../components/TopTitle';
+import TopTitle from '../components/topTitle';
 import { motion } from 'framer-motion';
 import theme from '../utilities/theme';
 import { useRouter } from 'next/router';

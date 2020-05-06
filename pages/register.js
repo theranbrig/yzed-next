@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import Div100vh from 'react-div-100vh';
-import Error from '../components/Error';
+import Error from '../components/error';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Head from 'next/head';
 import Layout from '../components/layout';

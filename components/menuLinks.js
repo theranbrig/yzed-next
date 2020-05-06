@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
+import ActiveLink from './activeLink';
 import { FirebaseContext } from '../utilities/context/firebase';
-import Link from 'next/link';
 import { ModalContext } from '../utilities/context/modal';
 import theme from '../utilities/theme';
 
@@ -32,7 +32,7 @@ const MenuLinks = () => {
           {showHome ? (
             <>
               <div className='main-links'>
-                <Link
+                <ActiveLink
                   href='/'
                   exact
                   activeClassName='active-link'
@@ -40,32 +40,32 @@ const MenuLinks = () => {
                     setModals();
                   }}>
                   <a>Home</a>
-                </Link>
-                <Link
+                </ActiveLink>
+                <ActiveLink
                   href='/featured'
                   activeClassName='active-link'
                   onClick={() => {
                     setModals();
                   }}>
                   <a>Featured</a>
-                </Link>
-                <Link
+                </ActiveLink>
+                <ActiveLink
                   href='/feed'
                   activeClassName='active-link'
                   onClick={() => {
                     setModals();
                   }}>
                   <a>Feed</a>
-                </Link>
+                </ActiveLink>
                 {userData.loggedIn && (
-                  <Link
+                  <ActiveLink
                     href={`/threads/${userData.id}`}
                     activeClassName='active-link'
                     onClick={() => {
                       setModals();
                     }}>
                     <a>My Threads</a>
-                  </Link>
+                  </ActiveLink>
                 )}
                 {/* <NavLink
                 to='/checkout'
@@ -76,36 +76,36 @@ const MenuLinks = () => {
                 My Bag
               </NavLink> */}
                 {!userData.loggedIn && (
-                  <Link
+                  <ActiveLink
                     href='/subscribe'
                     activeClassName='active-link'
                     onClick={() => {
                       setModals();
                     }}>
                     <a>Subscribe</a>
-                  </Link>
+                  </ActiveLink>
                 )}
               </div>
               <div className='bottom-links'>
                 {!userData.loggedIn ? (
-                  <Link
+                  <ActiveLink
                     href='/login'
                     activeClassName='active-link'
                     onClick={() => {
                       setModals();
                     }}>
                     <a>Sign in</a>
-                  </Link>
+                  </ActiveLink>
                 ) : (
                   <>
-                    <Link
+                    <ActiveLink
                       href='/profile'
                       activeClassName='active-link'
                       onClick={() => {
                         setModals();
                       }}>
                       <a>My profile</a>
-                    </Link>
+                    </ActiveLink>
                     <button
                       onClick={() => {
                         logoutUser();
@@ -252,7 +252,9 @@ const MenuLinks = () => {
           .side-links a {
             display: block;
           }
-
+          .active-link {
+            color: ${theme.colors.black};
+          }
           .top-links {
             background: ${theme.colors.black};
             position: absolute;
