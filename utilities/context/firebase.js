@@ -233,7 +233,7 @@ const FirebaseProvider = ({ children }) => {
             }
           });
       } else {
-        callback(initialUserData);
+        callback(initialUserState);
         setUserLoading(false);
       }
     });

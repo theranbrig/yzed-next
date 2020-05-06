@@ -15,7 +15,7 @@ function Layout({ children }) {
           <MenuLinks />
           <Link href='/'>
             <a>
-              <img src='icons/logo.svg' alt='YZED word mark' />
+              <img className='title-logo' src='icons/logo.svg' alt='YZED word mark' />
             </a>
           </Link>
         </div>
@@ -32,7 +32,7 @@ function Layout({ children }) {
           justify-content: center;
           align-items: center;
         }
-        img {
+        img.title-logo {
           height: 2rem;
         }
       `}</style>
