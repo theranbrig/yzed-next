@@ -29,7 +29,6 @@ const FeaturedProducts = () => {
           tempProducts.push({ id: doc.id, ...doc.data(), liked });
         }
       });
-      console.log(tempProducts);
       setProducts(tempProducts);
       setLoading(false);
     });
@@ -192,7 +191,7 @@ o;
             height: 18px;
             margin-top: 4px;
             top: 8px;
-            left: 1px;
+            left: 10px;
             background: none;
           }
           .lazy-load-image-background {
