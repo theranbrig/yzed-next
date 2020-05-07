@@ -32,39 +32,38 @@ const MenuLinks = () => {
           {showHome ? (
             <>
               <div className='main-links'>
-                <ActiveLink
-                  href='/'
-                  exact
-                  activeClassName='active-link'
-                  onClick={() => {
-                    setModals();
-                  }}>
-                  <a>Home</a>
-                </ActiveLink>
-                <ActiveLink
-                  href='/featured'
-                  activeClassName='active-link'
-                  onClick={() => {
-                    setModals();
-                  }}>
-                  <a>Featured</a>
-                </ActiveLink>
-                <ActiveLink
-                  href='/feed'
-                  activeClassName='active-link'
-                  onClick={() => {
-                    setModals();
-                  }}>
-                  <a>Feed</a>
-                </ActiveLink>
-                {userData.loggedIn && (
-                  <ActiveLink
-                    href={`/threads/${userData.id}`}
-                    activeClassName='active-link'
+                <ActiveLink href='/' activeClassName='active-link'>
+                  <a
                     onClick={() => {
                       setModals();
                     }}>
-                    <a>My Threads</a>
+                    Home
+                  </a>
+                </ActiveLink>
+                <ActiveLink href='/featured' activeClassName='active-link'>
+                  <a
+                    onClick={() => {
+                      setModals();
+                    }}>
+                    Featured
+                  </a>
+                </ActiveLink>
+                <ActiveLink href='/feed' activeClassName='active-link'>
+                  <a
+                    onClick={() => {
+                      setModals();
+                    }}>
+                    Feed
+                  </a>
+                </ActiveLink>
+                {userData.loggedIn && (
+                  <ActiveLink href={`/threads/${userData.id}`} activeClassName='active-link'>
+                    <a
+                      onClick={() => {
+                        setModals();
+                      }}>
+                      My Threads
+                    </a>
                   </ActiveLink>
                 )}
                 {/* <NavLink
@@ -76,35 +75,35 @@ const MenuLinks = () => {
                 My Bag
               </NavLink> */}
                 {!userData.loggedIn && (
-                  <ActiveLink
-                    href='/subscribe'
-                    activeClassName='active-link'
-                    onClick={() => {
-                      setModals();
-                    }}>
-                    <a>Subscribe</a>
+                  <ActiveLink href='/subscribe' activeClassName='active-link'>
+                    <a
+                      onClick={() => {
+                        setModals();
+                      }}>
+                      Subscribe
+                    </a>
                   </ActiveLink>
                 )}
               </div>
               <div className='bottom-links'>
                 {!userData.loggedIn ? (
-                  <ActiveLink
-                    href='/login'
-                    activeClassName='active-link'
-                    onClick={() => {
-                      setModals();
-                    }}>
-                    <a>Sign in</a>
-                  </ActiveLink>
-                ) : (
-                  <>
-                    <ActiveLink
-                      href='/profile'
-                      activeClassName='active-link'
+                  <ActiveLink href='/login' activeClassName='active-link'>
+                    <a
                       onClick={() => {
                         setModals();
                       }}>
-                      <a>My profile</a>
+                      Sign in
+                    </a>
+                  </ActiveLink>
+                ) : (
+                  <>
+                    <ActiveLink href='/profile' activeClassName='active-link'>
+                      <a
+                        onClick={() => {
+                          setModals();
+                        }}>
+                        My profile
+                      </a>
                     </ActiveLink>
                     <button
                       onClick={() => {

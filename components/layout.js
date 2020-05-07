@@ -38,7 +38,7 @@ function Layout({ children }) {
         .top-nav-bar {
           width: 100%;
           height: 10vh;
-          border-bottom: 1px solid ${theme.colors.black};
+
           background: ${theme.colors.white};
           margin: 0 auto;
           display: flex;
@@ -46,6 +46,7 @@ function Layout({ children }) {
           justify-content: center;
           align-items: center;
           position: fixed;
+          z-index: 10000;
         }
         img.title-logo {
           height: 2rem;
