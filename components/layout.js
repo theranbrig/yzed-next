@@ -2,7 +2,6 @@ import Burger from './burger';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Link from 'next/link';
 import MenuLinks from './menuLinks';
-import YzedLogo from './yzed_logo';
 import theme from '../utilities/theme';
 
 function Layout({ children }) {
@@ -38,7 +37,6 @@ function Layout({ children }) {
         .top-nav-bar {
           width: 100%;
           height: 10vh;
-
           background: ${theme.colors.white};
           margin: 0 auto;
           display: flex;

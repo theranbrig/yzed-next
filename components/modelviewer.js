@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout from '../components/layout';
+import Layout from './layout';
 
 const ModelViewer = ({ model }) => {
   return (
@@ -28,14 +28,14 @@ const ModelViewer = ({ model }) => {
         }
         auto-rotate
         camera-controls
-        className='model-viewer'></model-viewer>
+        poster='/icons/logo.svg'></model-viewer>
       <style jsx global>{`
         model-viewer {
           width: 500px;
           height: 300px;
           margin: 0 auto;
           z-index: 0;
-          max-width: 80%;
+          background: white;
         }
       `}</style>
     </div>

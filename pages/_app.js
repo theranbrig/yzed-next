@@ -2,6 +2,8 @@
 import FirebaseProvider from '../utilities/context/firebase';
 import Head from 'next/head';
 import ModalProvider from '../utilities/context/modal';
+import 'react-multi-carousel/lib/styles.css';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function MyApp({ Component, pageProps }) {
   return (
