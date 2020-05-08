@@ -75,9 +75,9 @@ const FeaturedProducts = ({ products }) => {
                             likeProduct(productId, product.liked);
                           }}>
                           {product.liked ? (
-                            <img src='/icons/like-filled.svg' alt='like' />
+                            <LazyLoadImage src='/icons/like-filled.svg' alt='like' effect='blur' />
                           ) : (
-                            <img src='/icons/like-empty.svg' alt='like' />
+                            <LazyLoadImage src='/icons/like-empty.svg' alt='like' effect='blur' />
                           )}
                         </button>
                         <Link href={`/item/${productId}`}>
