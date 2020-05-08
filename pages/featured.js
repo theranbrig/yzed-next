@@ -1,38 +1,42 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import { FirebaseContext } from '../utilities/context/firebase';
+import Layout from '../components/layout';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 // import LikeEmptySVG from '../assets/icons/icon_like_empty';
 // import LikeFilledSVG from '../assets/icons/icon_like_filled';
 import Link from 'next/link';
+import LoadingSpinner from '../components/loadingSpinner';
+import fetch from 'node-fetch';
+import firebase from '../utilities/firebaseSetup';
 // import { formatPrice } from '../utilities/formatting';
 import { motion } from 'framer-motion';
-import Layout from '../components/layout';
 import theme from '../utilities/theme';
-import LoadingSpinner from '../components/loadingSpinner';
 
-const FeaturedProducts = () => {
+const FeaturedProducts = ({ products }) => {
   const [loading, setLoading] = useState(false);
-  const [products, setProducts] = useState([]);
+  const [displayProducts, setDisplayProducts] = useState([]);
+
   const { dbh, userData, userLoading, firebase } = useContext(FirebaseContext);
 
-  const checkItems = () => {
-    setLoading(true);
-    dbh.collection('products').onSnapshot((querySnapshot) => {
-      let tempProducts = [];
-      querySnapshot.forEach((doc) => {
-        let liked = false;
-        if (userData.loggedIn) {
-          liked = userData.favoriteProducts.some((product) => product === doc.id);
-        }
-        if (doc.data().featured) {
-          tempProducts.push({ id: doc.id, ...doc.data(), liked });
-        }
-      });
-      setProducts(tempProducts);
-      setLoading(false);
-    });
-  };
+  // const checkItems = () => {
+  //   setLoading(true);
+  //   dbh.collection('products').onSnapshot((querySnapshot) => {
+  //     let tempProducts = [];
+  //     querySnapshot.forEach((doc) => {
+  //       let liked = false;
+  //       if (userData.loggedIn) {
+  //         liked = userData.favoriteProducts.some((product) => product === doc.id);
+  //       }
+  //       if (doc.data().featured) {
+  //         tempProducts.push({ id: doc.id, ...doc.data(), liked });
+  //       }
+  //     });
+  //     setProducts(tempProducts);
+  //     setLoading(false);
+  //   });
+  // };
+  console.log(products);
 
   const likeProduct = (productId, liked) => {
     if (!liked) {
@@ -48,11 +52,20 @@ const FeaturedProducts = () => {
     }
   };
 
+  const getData = async () => {
+    const res = await fetch(
+      'https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/products',
+      { cors: 'no-cors' }
+    ).then((res) => res.json());
+    console.log(res);
+  };
+
   useEffect(() => {
-    checkItems();
-    return () => {
-      checkItems();
-    };
+    getData();
+    // checkItems();
+    // return () => {
+    //   checkItems();
+    // };
   }, [userData, userLoading]);
 
   return (
@@ -68,36 +81,45 @@ const FeaturedProducts = () => {
               <h1>Featured Products</h1>
             </div>
             <div className='products'>
-              {products.map((product) => (
-                <div className='product' key={product.id}>
-                  <button
-                    aria-label='save to favorites'
-                    disabled={!userData.loggedIn}
-                    className='favorite'
-                    onClick={() => {
-                      likeProduct(product.id, product.liked);
-                    }}>
-                    {product.liked ? (
-                      <img src='/icons/like-filled.svg' />
-                    ) : (
-                      <img src='/icons/like-empty.svg' />
+              {products.map((product) => {
+                const productId = product.name.slice(60);
+                return (
+                  <>
+                    {product.fields.featured.booleanValue && (
+                      <div className='product' key={productId}>
+                        <button
+                          aria-label='save to favorites'
+                          disabled={!userData.loggedIn}
+                          className='favorite'
+                          onClick={() => {
+                            likeProduct(productId, product.liked);
+                          }}>
+                          {product.liked ? (
+                            <img src='/icons/like-filled.svg' />
+                          ) : (
+                            <img src='/icons/like-empty.svg' />
+                          )}
+                        </button>
+                        <Link href={`/item/${productId}`}>
+                          <a>
+                            <LazyLoadImage
+                              src={product.fields.mainImage.stringValue}
+                              alt={product.fields.name.stringValue}
+                              effect='blur'
+                              placeholder={
+                                <div className='placeholder' className='product-image'></div>
+                              }
+                            />
+                            <h2>{product.fields.brand.stringValue}</h2>
+                            <h3>{product.fields.name.stringValue}</h3>
+                            {/* <h4>{formatPrice(product.fields.price.integerValue)}</h4> */}
+                          </a>
+                        </Link>
+                      </div>
                     )}
-                  </button>
-                  <Link href={`/item/${product.id}`}>
-                    <a>
-                      <LazyLoadImage
-                        src={product.mainImage}
-                        alt={product.name}
-                        effect='blur'
-                        placeholder={<div className='placeholder' className='product-image'></div>}
-                      />
-                      <h2>{product.brand}</h2>
-                      <h3>{product.name}</h3>
-                      {/* <h4>{formatPrice(product.price)}</h4> */}
-                    </a>
-                  </Link>
-                </div>
-              ))}
+                  </>
+                );
+              })}
             </div>
           </div>
         </motion.div>
@@ -202,5 +224,18 @@ o;
     </>
   );
 };
+
+export async function getStaticProps() {
+  const res = await fetch(
+    'https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/products',
+    { cors: 'no-cors' }
+  ).then((res) => res.json());
+  const products = res.documents;
+  return {
+    props: {
+      products,
+    },
+  };
+}
 
 export default FeaturedProducts;
