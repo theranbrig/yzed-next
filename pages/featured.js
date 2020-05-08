@@ -186,7 +186,7 @@ o;
             right: 5px;
             z-index: 100;
           }
-          .product button img {
+          .product>button>img {
             position: absolute;
             height: 18px;
             margin-top: 4px;

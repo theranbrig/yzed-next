@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useRouter, withRouter } from 'next/router';
 
-import Error from '../components/Error';
+import Error from '../components/error';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Head from 'next/head';
 // import LoadingSpinner from '../components/LoadingSpinner';

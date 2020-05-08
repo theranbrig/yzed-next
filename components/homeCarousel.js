@@ -10,6 +10,7 @@ import { ModalContext } from '../utilities/context/modal';
 // import PhotoCarouselFullScreenPhoto from './PhotoCarouselFullScreenPhoto';
 // import TagFilledSVG from '../assets/icons/icon_tag_filled';
 import theme from '../utilities/theme';
+
 if (process.browser) {
   const body = document.querySelector('body');
 }
@@ -177,14 +178,6 @@ const MainPageCarousel = ({ title, product, brand }) => {
           .hidden-slider-cell-content {
             opacity: 0;
           }
-          @keyframes fadein {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
         `}
       </style>
       <style jsx global>
@@ -198,6 +191,15 @@ const MainPageCarousel = ({ title, product, brand }) => {
             background: linear-gradient(to top, #91eae4, #86a8e7, #7f7fd5);
             background-size: 100% 100%;
             width: 92%;
+            min-height: 320px;
+          }
+          @keyframes fadein {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
           }
         `}
       </style>
