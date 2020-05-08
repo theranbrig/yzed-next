@@ -172,8 +172,7 @@ const FeaturedProducts = ({ products }) => {
           .product img.product-image {
             border: 1px solid ${(props) => props.theme.colors.lightGrey};
             width: 100% !important;
-            margin: 0 autimport LoadingSpinner from '../components/loadingSpinner';
-o;
+            margin: 0 auto;
             background: #7f7fd5;
             background: -webkit-linear-gradient(to top, #91eae4, #86a8e7, #7f7fd5);
             background: linear-gradient(to top, #91eae4, #86a8e7, #7f7fd5);
@@ -208,7 +207,7 @@ o;
             right: 5px;
             z-index: 100;
           }
-          .product>button>img {
+          .product > button > img {
             position: absolute;
             height: 18px;
             margin-top: 4px;

@@ -5,43 +5,41 @@ import Head from 'next/head';
 import Layout from '../components/layout';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import Link from 'next/link';
+import LoadingSpinner from '../components/loadingSpinner';
 // import LoadingSpinner from '../components/LoadingSpinner';
 // import { LocationContext } from '../context/Location';
 import MainPageCarousel from '../components/homeCarousel';
 import ModelViewer from '../components/modelViewer';
+import fetch from 'node-fetch';
 // import { formatPrice } from '../utilities/formatting';
 import moment from 'moment';
 import { motion } from 'framer-motion';
 import theme from '../utilities/theme';
-import LoadingSpinner from '../components/loadingSpinner';
 
-const Home = () => {
-  const [mainProduct, setMainProduct] = useState(null);
+const Home = ({ product }) => {
   const [loading, setLoading] = useState(false);
   const [displayDate, setDisplayDate] = useState('');
   const { dbh, userData } = useContext(FirebaseContext);
+  const [mainProduct, setMainProduct] = useState({});
   // const { currentMarker } = useContext(LocationContext);
   const currentMarker = null;
 
-  useEffect(() => {
-    setLoading(true);
-    dbh
-      .collection('products')
-      .doc(currentMarker ? currentMarker.model : process.env.home_product_id)
-      .get()
-      .then((doc) => {
-        setMainProduct({ id: doc.id, ...doc.data() });
-        setDisplayDate(moment().format('YYYY.MM.DD'));
-        setLoading(false);
-      });
-  }, [currentMarker]);
+  const checkData = async () => {
+    const res = await fetch(
+      `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/products/${process.env.home_product_id}`,
+      { cors: 'no-cors' }
+    ).then((res) => console.log(res.json().then((data) => console.log(data))));
+  };
 
-  // if (loading)
-  //   return (
-  //     <Layout>
-  //       <LoadingSpinner />
-  //     </Layout>
-  //   );
+  useEffect(() => {
+    const model = {
+      name: product.fields.name.stringValue,
+      glbFile: product.fields.glbFile.stringValue,
+      usdzFile: product.fields.usdzFile.stringValue,
+      id: product.name.slice(59),
+    };
+    setMainProduct(model);
+  }, [currentMarker]);
 
   return (
     <>
@@ -442,4 +440,16 @@ const Home = () => {
   );
 };
 
+export async function getStaticProps() {
+  const product = await fetch(
+    `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/products/${process.env.home_product_id}`,
+    { cors: 'no-cors' }
+  ).then((res) => res.json().then((data) => data));
+
+  return {
+    props: {
+      product,
+    },
+  };
+}
 export default Home;
