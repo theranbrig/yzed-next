@@ -24,13 +24,6 @@ const Home = ({ product }) => {
   // const { currentMarker } = useContext(LocationContext);
   const currentMarker = null;
 
-  const checkData = async () => {
-    const res = await fetch(
-      `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/products/${process.env.home_product_id}`,
-      { cors: 'no-cors' }
-    ).then((res) => console.log(res.json().then((data) => console.log(data))));
-  };
-
   useEffect(() => {
     const model = {
       name: product.fields.name.stringValue,

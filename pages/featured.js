@@ -3,40 +3,21 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Layout from '../components/layout';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-// import LikeEmptySVG from '../assets/icons/icon_like_empty';
-// import LikeFilledSVG from '../assets/icons/icon_like_filled';
+
 import Link from 'next/link';
 import LoadingSpinner from '../components/loadingSpinner';
 import fetch from 'node-fetch';
 import firebase from '../utilities/firebaseSetup';
-// import { formatPrice } from '../utilities/formatting';
 import { motion } from 'framer-motion';
 import theme from '../utilities/theme';
+import Head from 'next/head';
+// import { formatPrice } from '../utilities/formatting';
 
 const FeaturedProducts = ({ products }) => {
   const [loading, setLoading] = useState(false);
   const [displayProducts, setDisplayProducts] = useState([]);
 
   const { dbh, userData, userLoading, firebase } = useContext(FirebaseContext);
-
-  // const checkItems = () => {
-  //   setLoading(true);
-  //   dbh.collection('products').onSnapshot((querySnapshot) => {
-  //     let tempProducts = [];
-  //     querySnapshot.forEach((doc) => {
-  //       let liked = false;
-  //       if (userData.loggedIn) {
-  //         liked = userData.favoriteProducts.some((product) => product === doc.id);
-  //       }
-  //       if (doc.data().featured) {
-  //         tempProducts.push({ id: doc.id, ...doc.data(), liked });
-  //       }
-  //     });
-  //     setProducts(tempProducts);
-  //     setLoading(false);
-  //   });
-  // };
-  console.log(products);
 
   const likeProduct = (productId, liked) => {
     if (!liked) {
@@ -62,15 +43,14 @@ const FeaturedProducts = ({ products }) => {
 
   useEffect(() => {
     getData();
-    // checkItems();
-    // return () => {
-    //   checkItems();
-    // };
   }, [userData, userLoading]);
 
   return (
     <>
       <Layout>
+        <Head>
+          <title>YZED - FEATURED</title>
+        </Head>
         <motion.div
           exit={{ opacity: 0, scale: 0 }}
           initial={{ opacity: 0, scale: 0.8 }}
@@ -95,9 +75,9 @@ const FeaturedProducts = ({ products }) => {
                             likeProduct(productId, product.liked);
                           }}>
                           {product.liked ? (
-                            <img src='/icons/like-filled.svg' />
+                            <img src='/icons/like-filled.svg' alt='like' />
                           ) : (
-                            <img src='/icons/like-empty.svg' />
+                            <img src='/icons/like-empty.svg' alt='like' />
                           )}
                         </button>
                         <Link href={`/item/${productId}`}>
