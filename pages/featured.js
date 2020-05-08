@@ -64,9 +64,9 @@ const FeaturedProducts = ({ products }) => {
               {products.map((product) => {
                 const productId = product.name.slice(60);
                 return (
-                  <>
+                  <React.Fragment key={productId}>
                     {product.fields.featured.booleanValue && (
-                      <div className='product' key={productId}>
+                      <div className='product'>
                         <button
                           aria-label='save to favorites'
                           disabled={!userData.loggedIn}
@@ -97,7 +97,7 @@ const FeaturedProducts = ({ products }) => {
                         </Link>
                       </div>
                     )}
-                  </>
+                  </React.Fragment>
                 );
               })}
             </div>
