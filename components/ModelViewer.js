@@ -14,14 +14,21 @@ const ModelViewer = ({ model }) => {
           src='https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js'></script>
       </Head>
       <div className='model-viewer-container'>
-        <model-viewer src={model.glbFile} ios={model.usdzFile} alt={model.name} ar></model-viewer>
+        <model-viewer
+          src={model.glbFile}
+          ios={model.usdzFile}
+          alt={model.name}
+          auto-rotate
+          ar></model-viewer>
       </div>
       <style jsx global>{`
         model-viewer {
-          background: transparent;
-          width: 500px;
-          height: 350px;
+          width: 900px;
+          height: 750px;
           max-width: 90%;
+          margin: 0 auto;
+          --poster-color: transparent;
+          --progress-bar-color: #ffffff75;
         }
       `}</style>
     </>

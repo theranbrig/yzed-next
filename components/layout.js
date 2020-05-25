@@ -19,6 +19,7 @@ function Layout({ children, title, loading }) {
         <style jsx global>{`
           html,
           body {
+            scroll-behavior: smooth;
             padding: 0;
             margin: 0;
             font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -54,6 +55,7 @@ function Layout({ children, title, loading }) {
       <style jsx global>{`
         html,
         body {
+          scroll-behavior: smooth;
           padding: 0;
           margin: 0;
           font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
