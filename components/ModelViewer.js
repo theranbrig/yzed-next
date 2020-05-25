@@ -14,7 +14,7 @@ const ModelViewer = ({ model }) => {
           src='https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js'></script>
       </Head>
       <div className='model-viewer-container'>
-        <model-viewer src={model.glbFile} ios={model.uszdFile}></model-viewer>
+        <model-viewer src={model.glbFile} ios={model.usdzFile} alt={model.name} ar></model-viewer>
       </div>
       <style jsx global>{`
         model-viewer {

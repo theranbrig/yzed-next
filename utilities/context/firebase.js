@@ -239,13 +239,13 @@ const FirebaseProvider = ({ children }) => {
     });
   };
 
-  useEffect(() => {
-    setUserLoading(true);
-    onAuthStateChange(setUserData);
-    return () => {
-      onAuthStateChange(setUserData);
-    };
-  }, []);
+  // useEffect(() => {
+  //   setUserLoading(true);
+  //   onAuthStateChange(setUserData);
+  //   return () => {
+  //     onAuthStateChange(setUserData);
+  //   };
+  // }, []);
 
   const uploadUserPhoto = (currentPictureUrl, description, taggedProducts) => {
     if (currentPictureUrl.length && userData && description.length && taggedProducts.length) {

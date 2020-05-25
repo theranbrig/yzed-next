@@ -13,6 +13,7 @@
     "node-fetch": "^2.6.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-lazy-load-image-component": "^1.4.3"
+    "react-lazy-load-image-component": "^1.4.3",
+    "react-scrollmagic": "^2.2.0"
   }
 }
