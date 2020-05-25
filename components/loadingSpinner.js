@@ -10,7 +10,7 @@ const LoadingSpinner = ({ color }) => {
           <div></div>
           <div></div>
         </div>
-        <img src='/icons/logo.svg' alt='YZED logo' />
+        <h1>Loading...</h1>
       </div>
       <style jsx>
         {`
@@ -48,11 +48,7 @@ const LoadingSpinner = ({ color }) => {
             color: ${theme.colors.black};
             font-family: ${theme.fonts.main};
             font-weight: 300;
-          }
-          img {
-            width: 40%;
             display: block;
-            margin: 0 auto;
           }
           @keyframes lds-facebook {
             0% {
