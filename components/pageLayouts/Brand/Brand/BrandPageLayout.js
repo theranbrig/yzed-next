@@ -1,12 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react';
-
-import HomeHeader from './BrandHeader';
+import BrandFooter from './BrandFooter';
+import BrandHeader from './BrandHeader';
+import BrandMainSection from './BrandMainSection';
 
 const BrandPageLayout = () => {
   return (
     <div>
-      <HomeHeader />
-      <h1>Hello</h1>
+      <BrandHeader />
+      <BrandMainSection />
+      <BrandFooter />
     </div>
   );
 };

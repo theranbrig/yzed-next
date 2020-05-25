@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-const HomeHeader = () => {
+const BrandHeader = () => {
   return (
     <div>
       <h1>Header</h1>
@@ -8,4 +8,4 @@ const HomeHeader = () => {
   );
 };
 
-export default HomeHeader;
+export default BrandHeader;

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import BrandPageLayout from '../components/pageLayouts/Brand/Brand/BrandPageLayout';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Layout from '../components/Layout';
-import LoadingSpinner from '../components/LoadingSpinner';
+import LoadingSpinner from '../components/reusableStyledComponents/LoadingSpinner';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 

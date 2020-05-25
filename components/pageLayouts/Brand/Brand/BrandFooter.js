@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-const HomeFooter = () => {
+const BrandFooter = () => {
   return (
     <div>
       <h1>Footer</h1>
@@ -8,4 +8,4 @@ const HomeFooter = () => {
   );
 };
 
-export default HomeFooter;
+export default BrandFooter;

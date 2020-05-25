@@ -1,5 +1,5 @@
 import React from 'react';
-import theme from '../utilities/theme';
+import theme from '../../utilities/theme';
 
 const LoadingSpinner = ({ color }) => {
   return (
