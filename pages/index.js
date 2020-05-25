@@ -416,7 +416,8 @@ const Home = ({ product }) => {
       </style>
       <style jsx global>
         {`
-          model-viewer {
+           {
+            /* model-viewer {
             width: 90%;
             height: 300px;
             margin: 0 auto;
@@ -426,6 +427,7 @@ const Home = ({ product }) => {
             model-viewer {
               max-width: 80%;
             }
+          } */
           }
         `}
       </style>
@@ -433,16 +435,16 @@ const Home = ({ product }) => {
   );
 };
 
-export async function getStaticProps() {
-  const product = await fetch(
-    `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/products/${process.env.home_product_id}`,
-    { cors: 'no-cors' }
-  ).then((res) => res.json().then((data) => data));
+// export async function getStaticProps() {
+//   const product = await fetch(
+//     `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/products/${process.env.home_product_id}`,
+//     { cors: 'no-cors' }
+//   ).then((res) => res.json().then((data) => data));
 
-  return {
-    props: {
-      product,
-    },
-  };
-}
+//   return {
+//     props: {
+//       product,
+//     },
+//   };
+// }
 export default Home;
