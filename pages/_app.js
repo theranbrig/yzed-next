@@ -1,10 +1,6 @@
-import 'react-multi-carousel/lib/styles.css';
-import 'react-lazy-load-image-component/src/effects/blur.css';
-
 // import App from 'next/app';
 import FirebaseProvider from '../utilities/context/firebase';
 import Head from 'next/head';
-import ModalProvider from '../utilities/context/modal';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -19,9 +15,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <FirebaseProvider>
-        <ModalProvider>
-          <Component {...pageProps} />
-        </ModalProvider>
+        <Component {...pageProps} />
       </FirebaseProvider>
     </>
   );

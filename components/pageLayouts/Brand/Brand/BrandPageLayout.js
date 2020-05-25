@@ -2,11 +2,11 @@ import BrandFooter from './BrandFooter';
 import BrandHeader from './BrandHeader';
 import BrandMainSection from './BrandMainSection';
 
-const BrandPageLayout = () => {
+const BrandPageLayout = ({ model }) => {
   return (
     <div>
       <BrandHeader />
-      <BrandMainSection />
+      <BrandMainSection model={model} />
       <BrandFooter />
     </div>
   );

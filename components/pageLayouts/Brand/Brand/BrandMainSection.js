@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-const BrandMainSection = () => {
+import ModelViewer from '../../../ModelViewer';
+
+const BrandMainSection = ({ model }) => {
   return (
     <div>
       <h1>Main</h1>
+      <ModelViewer model={model} />
     </div>
   );
 };

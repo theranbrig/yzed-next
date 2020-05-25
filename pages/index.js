@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import BrandPageLayout from '../components/pageLayouts/Brand/Brand/BrandPageLayout';
 import { FirebaseContext } from '../utilities/context/firebase';
 import Layout from '../components/Layout';
-import LoadingSpinner from '../components/reusableStyledComponents/LoadingSpinner';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
@@ -22,12 +21,13 @@ const Home = ({ product }) => {
       usdzFile: product.fields.usdzFile.stringValue,
       id: product.name.slice(59),
     };
+    console.log(product);
     setMainProduct(model);
   }, [currentMarker]);
 
   return (
-    <Layout title='YZED.me' loading={false}>
-      <BrandPageLayout />
+    <Layout title='YZED.me' loading={!mainProduct}>
+      <BrandPageLayout model={mainProduct} />
     </Layout>
   );
 };
