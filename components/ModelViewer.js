@@ -16,9 +16,11 @@ const ModelViewer = ({ model }) => {
       <div className='model-viewer-container'>
         <model-viewer
           src={model.glbFile}
-          ios={model.usdzFile}
+          ios-src={model.usdzFile}
           alt={model.name}
+          preload
           auto-rotate
+          camera-controls
           ar></model-viewer>
       </div>
       <style jsx global>{`
