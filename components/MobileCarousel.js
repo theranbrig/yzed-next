@@ -32,7 +32,7 @@ const MobileCarousel = ({ photos }) => {
         ssr={true}
         removeArrowOnDeviceType={['tablet', 'mobile']}>
         {photos.map((photo) => (
-          <div className='photo-wrapper'>
+          <div className='photo-wrapper' key={photo}>
             <img src={photo} alt={photo} />
           </div>
         ))}

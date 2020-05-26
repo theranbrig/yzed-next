@@ -47,7 +47,7 @@ const BrandHeader = () => {
                 className='st0'
                 d='M170.5,0h63.8l-3,14.6h-40.1l-1.7,8.1h37.2l-3,14.6h-37.2l-1.7,8.1h40.1l-3,14.6h-63.8L170.5,0z'
               />
-              <circle class='st0' cx='342.8' cy='47.9' r='12.1' />
+              <circle className='st0' cx='342.8' cy='47.9' r='12.1' />
             </g>
           </svg>
           <svg
@@ -364,8 +364,6 @@ const BrandHeader = () => {
             animation: none;
           }
         }
-
-
       `}</style>
     </>
   );
