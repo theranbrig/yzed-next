@@ -25,6 +25,7 @@ const BrandFooter = () => {
           padding: 10px 10%;
           color: ${theme.colors.white};
           font-weight: 100;
+          margin: 0;
         }
         a,
         strong {

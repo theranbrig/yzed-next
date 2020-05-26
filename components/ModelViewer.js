@@ -16,7 +16,7 @@ const ModelViewer = ({ model }) => {
       <div className='model-viewer-container'>
         <model-viewer
           src={model.glbFile}
-          ios-src={model.usdzFile}
+          ios={model.usdzFile}
           alt={model.name}
           preload
           auto-rotate
@@ -24,8 +24,11 @@ const ModelViewer = ({ model }) => {
           ar></model-viewer>
       </div>
       <style jsx global>{`
+        .model-viewer-container {
+          padding: 20px 0;
+        }
         model-viewer {
-          width: 900px;
+          width: 600px;
           height: 750px;
           max-width: 90%;
           margin: 0 auto;
