@@ -174,13 +174,13 @@ const BrandHeader = () => {
           stroke-miterlimit: 10;
         }
         .collapsed .outline-svg .st0 {
-          animation: collapseOutlineSvg 1s;
           fill: none;
           stroke: ${theme.colors.white};
         }
         .collapsed .outline-svg {
           margin: -10px 0 0 40px;
           height: 40px;
+          animation: collapseOutlineSvg 1s;
         }
         @keyframes collapseSvg {
           from {
@@ -262,23 +262,18 @@ const BrandHeader = () => {
           .header-container {
             display: grid;
             grid-template-columns: 1fr;
-            margin: 0 auto;
             align-items: center;
             width: 100%;
-            height: 100px;
+            height: 110px;
             animation: none;
+            padding: 0;
           }
           .header-container.expanded {
-            padding: 0;
-            height: 100px;
+            height: 110px;
           }
-
           .logo svg {
             height: 40px !important;
             fill: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
           }
           .outline-svg .st0 {
             fill: none;
@@ -299,7 +294,8 @@ const BrandHeader = () => {
             margin: 0;
           }
           .expanded .outline-svg {
-            animation: none;
+            margin: -10px 0 0 40px;
+            height: 40px;
           }
           .outline-svg,
           .collapsed .outline-svg .st0,
@@ -312,18 +308,59 @@ const BrandHeader = () => {
           }
         }
         /* Medium (md) */
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
           /* ... */
-        }
-
-        /* Large (lg) */
-        @media (min-width: 1024px) {
-          /* ... */
-        }
-
-        /* Extra Large (xl) */
-        @media (min-width: 1280px) {
-          /* ... */
+          .logo svg {
+            height: 40px !important;
+          }
+          .expanded .outline-svg,
+          .expanded .filled-svg {
+            height: 40px;
+          }
+          .collapsed .outline-svg {
+            animation: collapseOutlineMdSvg 1s;
+          }
+          .expanded .outline-svg {
+            animation: expandOutlineMdSvg 1s;
+          }
+          .collapsed .filled-svg {
+            animation: collapseFilledMdSvg 1s;
+          }
+          .expanded .filled-svg {
+            animation: expandFilledMdSvg 1s;
+          }
+          @keyframes collapseOutlineMdSvg {
+            from {
+              stroke: ${theme.colors.black};
+            }
+            to {
+              stroke: ${theme.colors.white};
+            }
+          }
+          @keyframes expandOutlineMdSvg {
+            to {
+              stroke: ${theme.colors.black};
+            }
+            from {
+              stroke: ${theme.colors.white};
+            }
+          }
+          @keyframes collapseFilledMdSvg {
+            from {
+              fill: ${theme.colors.black};
+            }
+            to {
+              fill: ${theme.colors.white};
+            }
+          }
+          @keyframes expandFilledMdSvg {
+            to {
+              fill: ${theme.colors.black};
+            }
+            from {
+              fill: ${theme.colors.white};
+            }
+          }
         }
       `}</style>
     </>

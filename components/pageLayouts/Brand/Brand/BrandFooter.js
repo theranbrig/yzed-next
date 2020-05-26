@@ -26,13 +26,19 @@ const BrandFooter = () => {
           color: ${theme.colors.white};
           font-weight: 100;
           margin: 0;
+          font-size: 1rem;
         }
         a,
         strong {
           color: ${theme.colors.white};
           font-weight: 500;
           text-decoration: none;
-          font-size: 1rem;
+        }
+        @media (max-width: 640px) {
+          p {
+            font-size: 0.8rem;
+            padding: 10px 5%;
+          }
         }
       `}</style>
     </>

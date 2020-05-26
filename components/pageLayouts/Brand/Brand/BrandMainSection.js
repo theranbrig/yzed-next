@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ModelViewer from '../../../ModelViewer';
 import theme from '../../../../utilities/theme';
 
@@ -18,9 +19,15 @@ const BrandMainSection = ({ model }) => {
             </div>
           </div>
           <div className='brand-images'>
-            <img src='yzed-logo.png' alt='image' />
-            <img src='yzed-logo.png' alt='image' />
-            <img src='yzed-logo.png' alt='image' />
+            <div className='photo-wrapper'>
+              <img src='testimg_1.jpg' alt='image' effect='blur' wrapperClassName='brand-image' />
+            </div>
+            <div className='photo-wrapper'>
+              <img src='testimg_2.jpg' alt='image' effect='blur' wrapperClassName='brand-image' />
+            </div>
+            <div className='photo-wrapper'>
+              <img src='testimg_3.jpg' alt='image' effect='blur' wrapperClassName='brand-image' />
+            </div>
           </div>
         </div>
       </div>
@@ -50,15 +57,18 @@ const BrandMainSection = ({ model }) => {
           margin: 0;
         }
         .brand-images {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          grid-template-rows: 225px;
-          grid-gap: 20px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
         }
-        .brand-images img {
+        .photo-wrapper {
+          width: 32%;
+        }
+        .photo-wrapper img {
+          object-fit: contain;
           border: 1px solid white;
           width: 100%;
-          height: 100%;
         }
         .dash {
           width: 80px;
@@ -80,12 +90,12 @@ const BrandMainSection = ({ model }) => {
             margin-bottom: 50px;
           }
           .brand-images {
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
             padding-bottom: 50px;
+            flex-direction: column;
           }
-          .brand-images img {
-            height: 225px;
+          .photo-wrapper {
+            width: 100%;
+            margin: 20px 0;
           }
         }
       `}</style>

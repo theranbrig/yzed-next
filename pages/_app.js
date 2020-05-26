@@ -1,6 +1,7 @@
 // import App from 'next/app';
 import FirebaseProvider from '../utilities/context/firebase';
 import Head from 'next/head';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function MyApp({ Component, pageProps }) {
   return (

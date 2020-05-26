@@ -6,6 +6,13 @@ const BrandAbout = () => {
   return (
     <>
       <div className='about-container'>
+        <div className='mobile-message'>
+          <h2>We believe democratic fashion catalyzes self-discovery.</h2>
+          <p>
+            YZED is the view of four professionals from different backgrounds based in Seoul, South
+            Korea represented by innovation hub 101Global.
+          </p>
+        </div>
         <div className='about'>
           <h2>About Us</h2>
           <p>
@@ -94,6 +101,21 @@ const BrandAbout = () => {
           .about-container {
             width: 90%;
             grid-template-columns: 1fr;
+            padding: 30px 0;
+          }
+          .contact {
+            width: 80%;
+          }
+          .about {
+            padding: 20px 0;
+          }
+          a.black-link {
+            width: 100%;
+          }
+        }
+        @media (min-width: 641px) {
+          .mobile-message {
+            display: none;
           }
         }
       `}</style>

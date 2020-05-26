@@ -30,7 +30,7 @@ const ModelViewer = ({ model }) => {
         model-viewer {
           width: 600px;
           height: 750px;
-          max-width: 95%;
+          max-width: 100%;
           margin: 0 auto;
           --poster-color: transparent;
         }
