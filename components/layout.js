@@ -1,12 +1,9 @@
-import { FirebaseContext } from '../utilities/context/firebase';
 import Head from 'next/head';
 import Link from 'next/link';
 import LoadingSpinner from './reusableStyledComponents/LoadingSpinner';
 import theme from '../utilities/theme';
 
 function Layout({ children, title, loading }) {
-  const { userData } = React.useContext(FirebaseContext);
-
   if (loading)
     return (
       <>

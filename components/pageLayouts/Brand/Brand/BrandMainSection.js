@@ -5,7 +5,7 @@ import ModelViewer from '../../../ModelViewer';
 import theme from '../../../../utilities/theme';
 import MobileCarousel from '../../../MobileCarousel';
 
-const photos = ['testimg_1.jpg', 'testimg_2.jpg', 'testimg_3.jpg'];
+const photos = ['testimg_1-min.jpg', 'testimg_2-min.jpg', 'testimg_3-min.jpg'];
 
 const BrandMainSection = ({ model }) => {
   return (

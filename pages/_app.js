@@ -33,9 +33,8 @@ function MyApp({ Component, pageProps }) {
         />
         <link rel='manifest' href='manifest.json' />
       </Head>
-      <FirebaseProvider>
-        <Component {...pageProps} />
-      </FirebaseProvider>
+      {/* Wrap this with Firebase Provider later if needed */}
+      <Component {...pageProps} />
     </>
   );
 }

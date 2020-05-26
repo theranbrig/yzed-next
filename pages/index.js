@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import BrandPageLayout from '../components/pageLayouts/Brand/Brand/BrandPageLayout';
-import { FirebaseContext } from '../utilities/context/firebase';
+
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
@@ -9,7 +9,7 @@ import theme from '../utilities/theme';
 const Home = ({ product }) => {
   const [loading, setLoading] = useState(false);
   const [displayDate, setDisplayDate] = useState('');
-  const { dbh, userData } = useContext(FirebaseContext);
+
   const [mainProduct, setMainProduct] = useState({});
 
   const currentMarker = null;
