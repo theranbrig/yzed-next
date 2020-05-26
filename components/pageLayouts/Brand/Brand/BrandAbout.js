@@ -36,11 +36,15 @@ const BrandAbout = () => {
 
           <a
             className='black-link'
-            href='mailto:abc@example.com?subject=Interested in Learning More'>
+            href='mailto:yzed.official@gmail.com?subject=Interested in Learning More'>
             SIGN UP FOR UPDATES
           </a>
           <p className='or'>or</p>
-          <a className='blank-link' href='/'>
+          <a
+            className='blank-link'
+            href='http://www.orimi.com/pdf-test.pdf'
+            target='_blank'
+            rel='noopener noreferrer'>
             DOWNLOAD MANIFESTO
           </a>
         </div>
@@ -84,6 +88,10 @@ const BrandAbout = () => {
           margin: 0 auto;
           border: 1px solid ${theme.colors.black};
         }
+        a {
+          letter-spacing: 0.2em;
+          font-weight: 500;
+        }
         a.black-link:hover {
           background-color: ${theme.colors.white};
           color: ${theme.colors.black};
@@ -91,6 +99,17 @@ const BrandAbout = () => {
         a.blank-link {
           color: ${theme.colors.black};
           padding: 5px;
+          position: relative;
+          text-decoration: none;
+          width: 100%;
+        }
+        a.blank-link:after {
+          content: '';
+          width: 60%;
+          border-bottom: 1px solid black;
+          position: absolute;
+          left: calc(20%);
+          bottom: 0;
         }
         .or {
           color: ${theme.colors.mediumGrey};
@@ -104,10 +123,11 @@ const BrandAbout = () => {
             padding: 30px 0;
           }
           .contact {
-            width: 80%;
+            width: 100%;
+            padding-bottom: 30px;
           }
           .about {
-            padding: 20px 0;
+            padding: 30px 0;
           }
           a.black-link {
             width: 100%;

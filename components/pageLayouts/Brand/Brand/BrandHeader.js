@@ -256,57 +256,6 @@ const BrandHeader = () => {
             opacity: 1;
           }
         }
-        /* Small (sm) */
-        @media (max-width: 640px) {
-          /* ... */
-          .header-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
-            width: 100%;
-            height: 110px;
-            animation: none;
-            padding: 0;
-          }
-          .header-container.expanded {
-            height: 110px;
-          }
-          .logo svg {
-            height: 40px !important;
-            fill: white;
-          }
-          .outline-svg .st0 {
-            fill: none;
-            stroke: ${theme.colors.white};
-            stroke-width: 1;
-            stroke-miterlimit: 10;
-          }
-          .logo {
-            background-color: ${theme.colors.black};
-            width: 100%;
-            padding: 40px 5% 0;
-            margin-bottom: 80px;
-          }
-          .right-content {
-            display: none;
-          }
-          .filled-svg {
-            margin: 0;
-          }
-          .expanded .outline-svg {
-            margin: -10px 0 0 40px;
-            height: 40px;
-          }
-          .outline-svg,
-          .collapsed .outline-svg .st0,
-          .filled-svg,
-          .expanded .filled-svg,
-          .expanded .outline-svg,
-          .collapsed svg,
-          .expanded svg {
-            animation: none;
-          }
-        }
         /* Medium (md) */
         @media (max-width: 768px) {
           /* ... */
@@ -362,6 +311,61 @@ const BrandHeader = () => {
             }
           }
         }
+        /* Small (sm) */
+        @media (max-width: 640px) {
+          /* ... */
+          .header-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            width: 100%;
+            height: 110px;
+            animation: none;
+            padding: 0;
+          }
+          .header-container.expanded {
+            height: 110px;
+          }
+          .logo svg {
+            height: 40px !important;
+            fill: white;
+          }
+          .outline-svg .st0 {
+            fill: none;
+            stroke: ${theme.colors.white};
+            stroke-width: 1;
+            stroke-miterlimit: 10;
+          }
+          .logo {
+            background-color: ${theme.colors.black};
+            width: 100%;
+            padding: 40px 5% 0;
+            margin-bottom: 80px;
+          }
+          .right-content {
+            display: none;
+          }
+          .filled-svg {
+            margin: 0;
+          }
+          .expanded .outline-svg {
+            margin: -10px 0 0 40px;
+            height: 40px;
+          }
+          .collapsed .outline-svg .st0,
+          .filled-svg,
+          .outline-svg,
+          .collapsed .outline-svg,
+          .collapsed .filled-svg,
+          .expanded .filled-svg,
+          .expanded .outline-svg,
+          .collapsed svg,
+          .expanded svg {
+            animation: none;
+          }
+        }
+
+
       `}</style>
     </>
   );

@@ -2,20 +2,21 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import Link from 'next/link';
 import theme from '../../utilities/theme';
+import ActiveLink from '../reusableStyledComponents/ActiveLink';
 
 const Navigation = ({ collapsed }) => {
   return (
     <>
       <div className={collapsed ? 'navigation-container collapsed' : 'navigation-container'}>
-        <Link href='#introduction'>
+        <ActiveLink href='#introduction'>
           <a>INTRODUCTION</a>
-        </Link>
-        <Link href='#introduction'>
+        </ActiveLink>
+        <ActiveLink href='#3DModel'>
           <a>3D MODEL</a>
-        </Link>
-        <Link href='#introduction'>
+        </ActiveLink>
+        <ActiveLink href='#about'>
           <a>ABOUT US</a>
-        </Link>
+        </ActiveLink>
       </div>
       <style jsx>{`
         .navigation-container {
