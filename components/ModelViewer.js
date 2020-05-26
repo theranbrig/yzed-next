@@ -30,10 +30,9 @@ const ModelViewer = ({ model }) => {
         model-viewer {
           width: 600px;
           height: 750px;
-          max-width: 90%;
+          max-width: 95%;
           margin: 0 auto;
           --poster-color: transparent;
-          --progress-bar-color: #ffffff75;
         }
       `}</style>
     </>

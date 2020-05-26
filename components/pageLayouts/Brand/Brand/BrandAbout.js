@@ -26,7 +26,10 @@ const BrandAbout = () => {
         </div>
         <div className='contact'>
           <h2>Would you like to be a catalyst of democratic fashion?</h2>
-          <a className='black-link' href='/'>
+
+          <a
+            className='black-link'
+            href='mailto:abc@example.com?subject=Interested in Learning More'>
             SIGN UP FOR UPDATES
           </a>
           <p className='or'>or</p>
@@ -63,9 +66,7 @@ const BrandAbout = () => {
         p {
           font-weight: 100;
         }
-        .or {
-          text-align: center;
-        }
+
         a.black-link {
           background-color: ${theme.colors.black};
           color: ${theme.colors.white};
@@ -87,6 +88,13 @@ const BrandAbout = () => {
         .or {
           color: ${theme.colors.mediumGrey};
           font-size: 0.8rem;
+          text-align: center;
+        }
+        @media (max-width: 640px) {
+          .about-container {
+            width: 90%;
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </>

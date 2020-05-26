@@ -28,24 +28,23 @@ const BrandHeader = () => {
             x='0px'
             y='0px'
             viewBox='0 0 355 60'
-            fill='#232323'
             className='filled-svg'>
             <g>
               <path
-                class='st0'
+                className='st0'
                 d='M81,44.9l41.8-29.8H88.4L92.2,0h67.7l-3.2,15.1l-41.2,29.8h37.1L148.6,60H78L81,44.9z'
               />
               <path
-                class='st0'
+                className='st0'
                 d='M87.1,0H58.8L39.5,28.9L32.6,0H4.4L17,44.9H4L0.4,60l21.3,0c22.6,0,36.1-19,36.1-19L87.1,0z'
               />
               <path
-                class='st0'
+                className='st0'
                 d='M243.7,0h46.2c20.4,0,29.3,7.9,24.9,30c-4.4,21.1-16.9,30-36.8,30h-46.7L243.7,0z M258.1,44.9h13.6
 		c10.8,0,16.3-5.4,18.3-14.9c1.9-9.5-1.3-14.9-12.1-14.9h-13.6L258.1,44.9z'
               />
               <path
-                class='st0'
+                className='st0'
                 d='M170.5,0h63.8l-3,14.6h-40.1l-1.7,8.1h37.2l-3,14.6h-37.2l-1.7,8.1h40.1l-3,14.6h-63.8L170.5,0z'
               />
               <circle class='st0' cx='342.8' cy='47.9' r='12.1' />
@@ -109,7 +108,7 @@ const BrandHeader = () => {
           height: 200px;
           background-color: ${theme.colors.black};
           color: ${theme.colors.white};
-          animation: collapseBox 0.5s;
+          animation: collapseBox 1s;
         }
         .collapsed .message {
           animation: collapseText 1s;
@@ -138,42 +137,82 @@ const BrandHeader = () => {
         .logo svg {
           height: 60px;
         }
-        .expanded .logo svg {
+         {
+          /* Filled SVG */
+        }
+        .expanded .filled-svg {
           height: 60px;
           animation: expandSvg 1s;
         }
-        .collapsed .logo svg {
+        .collapsed .filled-svg {
           fill: ${theme.colors.white};
           height: 40px;
         }
-         {
-          /* .outline-svg {
-          stroke-width: 2px;
-          stroke: green;
-          display: relative;
-          margin: -20px 0 0 40px;
-        } */
+        .filled-svg {
+          z-index: 100;
+          position: relative;
         }
-        .st0 {
+        .filled-logo {
+          fill: ${theme.colors.black};
+        }
+         {
+          /* Outline SVG */
+        }
+        .expanded .outline-svg {
+          height: 60px;
+          animation: expandOutlineSvg 1s;
+        }
+        .outline-svg {
+          position: relative;
+          margin: -15px 0 0 60px;
+          z-index: 1;
+        }
+        .outline-svg .st0 {
           fill: none;
           stroke: ${theme.colors.black};
           stroke-width: 1;
           stroke-miterlimit: 10;
         }
-        .logo {
-          padding: 2px;
+        .collapsed .outline-svg .st0 {
+          animation: collapseOutlineSvg 1s;
+          fill: none;
+          stroke: ${theme.colors.white};
+        }
+        .collapsed .outline-svg {
+          margin: -10px 0 0 40px;
+          height: 40px;
         }
         @keyframes collapseSvg {
           from {
             fill: ${theme.colors.black};
-            height: 75px;
+            height: 60px;
           }
           to {
             fill: ${theme.colors.white};
             height: 40px;
           }
         }
+        @keyframes collapseOutlineSvg {
+          from {
+            stroke: ${theme.colors.black};
+            height: 60px;
+          }
+          to {
+            stroke: ${theme.colors.white};
+            height: 40px;
+          }
+        }
         @keyframes expandSvg {
+          from {
+            fill: ${theme.colors.white};
+            height: 40px;
+          }
+          to {
+            fill: ${theme.colors.black};
+            height: 60px;
+          }
+        }
+        @keyframes expandOutlineSvg {
           from {
             fill: ${theme.colors.white};
             height: 40px;
@@ -216,6 +255,75 @@ const BrandHeader = () => {
           to {
             opacity: 1;
           }
+        }
+        /* Small (sm) */
+        @media (max-width: 640px) {
+          /* ... */
+          .header-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin: 0 auto;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            animation: none;
+          }
+          .header-container.expanded {
+            padding: 0;
+            height: 100px;
+          }
+
+          .logo svg {
+            height: 40px !important;
+            fill: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .outline-svg .st0 {
+            fill: none;
+            stroke: ${theme.colors.white};
+            stroke-width: 1;
+            stroke-miterlimit: 10;
+          }
+          .logo {
+            background-color: ${theme.colors.black};
+            width: 100%;
+            padding: 40px 5% 0;
+            margin-bottom: 80px;
+          }
+          .right-content {
+            display: none;
+          }
+          .filled-svg {
+            margin: 0;
+          }
+          .expanded .outline-svg {
+            animation: none;
+          }
+          .outline-svg,
+          .collapsed .outline-svg .st0,
+          .filled-svg,
+          .expanded .filled-svg,
+          .expanded .outline-svg,
+          .collapsed svg,
+          .expanded svg {
+            animation: none;
+          }
+        }
+        /* Medium (md) */
+        @media (min-width: 768px) {
+          /* ... */
+        }
+
+        /* Large (lg) */
+        @media (min-width: 1024px) {
+          /* ... */
+        }
+
+        /* Extra Large (xl) */
+        @media (min-width: 1280px) {
+          /* ... */
         }
       `}</style>
     </>

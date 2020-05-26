@@ -34,6 +34,13 @@ const Navigation = ({ collapsed }) => {
         .collapsed a {
           color: white;
         }
+        /* Small (sm) */
+        @media (max-width: 640px) {
+          /* ... */
+          .navigation-container {
+            display: none;
+          }
+        }
       `}</style>
     </>
   );

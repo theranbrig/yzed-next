@@ -37,7 +37,6 @@ const BrandMainSection = ({ model }) => {
           display: flex;
           flex-direction: row;
           align-items: center;
-
           font-size: 1.5rem;
           font-family: ${theme.fonts.main};
           color: ${theme.colors.white};
@@ -65,6 +64,29 @@ const BrandMainSection = ({ model }) => {
           width: 80px;
           border-bottom: 1px solid ${theme.colors.white};
           margin: 0 30px;
+        }
+        @media (max-width: 640px) {
+          .main-container {
+            padding: 0px 5%;
+          }
+          .brand-title {
+            flex-direction: column;
+          }
+          .dash {
+            display: none;
+          }
+          .about {
+            width: 100%;
+            margin-bottom: 50px;
+          }
+          .brand-images {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            padding-bottom: 50px;
+          }
+          .brand-images img {
+            height: 225px;
+          }
         }
       `}</style>
     </>
