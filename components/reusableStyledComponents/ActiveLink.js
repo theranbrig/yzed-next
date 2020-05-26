@@ -1,15 +1,16 @@
 import React from 'react';
-import Link from 'next/link';
+
 import { useRouter } from 'next/router';
 
 export default ({ href, children }) => {
   const router = useRouter();
-  console.log(router);
+  console.log(router.asPath.toLowerCase());
+  console.log(href.toLowerCase());
 
   let className = children.props.className || '';
-  if (router.pathname === href) {
+  if (router.asPath.toLowerCase().includes(href.toLowerCase())) {
     className = `${className} selected`;
   }
 
-  return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
+  return <a href={href}>{React.cloneElement(children, { className })}</a>;
 };

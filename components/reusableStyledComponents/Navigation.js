@@ -8,15 +8,9 @@ const Navigation = ({ collapsed }) => {
   return (
     <>
       <div className={collapsed ? 'navigation-container collapsed' : 'navigation-container'}>
-        <ActiveLink href='#introduction'>
-          <a>INTRODUCTION</a>
-        </ActiveLink>
-        <ActiveLink href='#3DModel'>
-          <a>3D MODEL</a>
-        </ActiveLink>
-        <ActiveLink href='#about'>
-          <a>ABOUT US</a>
-        </ActiveLink>
+        <a href='/#introduction'>INTRODUCTION</a>
+        <a href='/#model'>3D MODEL</a>
+        <a href='/#about'>ABOUT US</a>
       </div>
       <style jsx>{`
         .navigation-container {
@@ -41,6 +35,11 @@ const Navigation = ({ collapsed }) => {
           .navigation-container {
             display: none;
           }
+        }
+      `}</style>
+      <style jsx global>{`
+        a.selected {
+          border-bottom: 1px solid;
         }
       `}</style>
     </>
