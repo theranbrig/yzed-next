@@ -3,6 +3,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ModelViewer from '../../../ModelViewer';
 import theme from '../../../../utilities/theme';
+import MobileCarousel from '../../../MobileCarousel';
+
+const photos = ['testimg_1.jpg', 'testimg_2.jpg', 'testimg_3.jpg'];
 
 const BrandMainSection = ({ model }) => {
   return (
@@ -18,16 +21,8 @@ const BrandMainSection = ({ model }) => {
               <p>Cupro rich floral print blazer</p>
             </div>
           </div>
-          <div className='brand-images'>
-            <div className='photo-wrapper'>
-              <img src='testimg_1.jpg' alt='image' effect='blur' wrapperClassName='brand-image' />
-            </div>
-            <div className='photo-wrapper'>
-              <img src='testimg_2.jpg' alt='image' effect='blur' wrapperClassName='brand-image' />
-            </div>
-            <div className='photo-wrapper'>
-              <img src='testimg_3.jpg' alt='image' effect='blur' wrapperClassName='brand-image' />
-            </div>
+          <div className='mobile-carousel'>
+            <MobileCarousel photos={photos} />
           </div>
         </div>
       </div>
@@ -56,19 +51,8 @@ const BrandMainSection = ({ model }) => {
           font-weight: 100;
           margin: 0;
         }
-        .brand-images {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
-        .photo-wrapper {
-          width: 32%;
-        }
-        .photo-wrapper img {
-          object-fit: contain;
-          border: 1px solid white;
-          width: 100%;
+        .mobile-carousel {
+          padding-bottom: 50px;
         }
         .dash {
           width: 80px;
@@ -88,14 +72,6 @@ const BrandMainSection = ({ model }) => {
           .about {
             width: 100%;
             margin-bottom: 50px;
-          }
-          .brand-images {
-            padding-bottom: 50px;
-            flex-direction: column;
-          }
-          .photo-wrapper {
-            width: 100%;
-            margin: 20px 0;
           }
         }
       `}</style>

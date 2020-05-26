@@ -4673,6 +4673,11 @@ react-lazy-load-image-component@^1.4.3:
     lodash.debounce "^4.0.8"
     lodash.throttle "^4.1.1"
 
+react-multi-carousel@^2.5.5:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/react-multi-carousel/-/react-multi-carousel-2.5.5.tgz#f83aa1bd39d64ebbda08f724590ebe8994559fcd"
+  integrity sha512-yjRNA3KypwJHDQba1XUz1cVrcejZ9c+4cdY3ODPBj/FMVT+Vj7bE3V4wkWiHRzeYNzhaf902/pbO3cP2e9261A==
+
 react-refresh@0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.1.tgz#5500506ad6fc891fdd057d0bf3581f9310abc6a2"
