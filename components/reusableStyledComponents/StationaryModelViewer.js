@@ -22,6 +22,8 @@ const StationaryModelViewer = ({ model }) => {
           auto-rotate
           camera-controls
           exposure={0.5}
+          poster={'y-logo.png'}
+          interaction-policy='allow-when-focused'
           ar></model-viewer>
       </div>
       <style jsx global>{`

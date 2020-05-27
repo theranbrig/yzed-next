@@ -49,7 +49,6 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
       </div>
       <style jsx>{`
         .controls {
-          margin: 0 20px;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
