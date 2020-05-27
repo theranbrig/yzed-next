@@ -8,7 +8,6 @@ const BrandHeader = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY);
       if (window.scrollY > 3) {
         setCollapsed(true);
       } else {

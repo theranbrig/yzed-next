@@ -8,6 +8,27 @@ import MobileCarousel from '../../../MobileCarousel';
 const photos = ['testimg_1-min.jpg', 'testimg_2-min.jpg', 'testimg_3-min.jpg'];
 
 const BrandMainSection = ({ model }) => {
+  const photos = [
+    {
+      id: `${model.name} Detail View 1`,
+      mini: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_1_mini.jpg`,
+      thumb: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_1_thumb.jpg`,
+      max: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_1_max.jpg`,
+    },
+    {
+      id: `${model.name} Detail View 2`,
+      mini: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_2_mini.jpg`,
+      thumb: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_2_thumb.jpg`,
+      max: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_2_max.jpg`,
+    },
+    {
+      id: `${model.name} Detail View 3`,
+      mini: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_3_mini.jpg`,
+      thumb: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_3_thumb.jpg`,
+      max: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_3_max.jpg`,
+    },
+  ];
+  console.log(photos);
   return (
     <>
       <div className='main-container'>

@@ -28,12 +28,12 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
 
   const handleClick = () => {
     console.log(btnRef.current);
-    setCurrentImage(btnRef.current.src);
+    setCurrentImage(photo.max);
     openModal(btnRef);
   };
   return (
     <>
-      <img ref={btnRef} src={photo} alt={photo} onClick={() => handleClick()} />
+      <img ref={btnRef} src={photo.thumb} alt={photo.id} onClick={() => handleClick()} />
       <style jsx>{`
         img {
           object-fit: contain;
@@ -61,7 +61,7 @@ const MobileCarousel = ({ photos }) => {
         {photos.map((photo) => {
           const ref = useRef(null);
           return (
-            <div ref={ref} className='photo-wrapper' key={photo} id={photo}>
+            <div ref={ref} className='photo-wrapper' key={photo.id}>
               <Image openModal={open} photo={photo} setCurrentImage={setCurrentImage} />
             </div>
           );
@@ -79,6 +79,7 @@ const MobileCarousel = ({ photos }) => {
         }
         .modal-image-container img {
           border: 1px solid white;
+          margin: 5px;
         }
         .modal-image-container {
           height: 100%;
