@@ -21,6 +21,7 @@ const ModelViewer = ({ model }) => {
           preload
           auto-rotate
           camera-controls
+          exposure={0.5}
           ar></model-viewer>
       </div>
       <style jsx global>{`

@@ -3,6 +3,7 @@ import FirebaseProvider from '../utilities/context/firebase';
 import Head from 'next/head';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'react-multi-carousel/lib/styles.css';
+import 'react-morphing-modal/dist/ReactMorphingModal.css';
 
 function MyApp({ Component, pageProps }) {
   return (

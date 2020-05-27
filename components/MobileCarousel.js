@@ -1,5 +1,6 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext, useState, useRef } from 'react';
 import Carousel from 'react-multi-carousel';
+import { useModal, Modal } from 'react-morphing-modal';
 
 const responsive = {
   superLargeDesktop: {
@@ -22,7 +23,33 @@ const responsive = {
   },
 };
 
+const Image = ({ openModal, photo, setCurrentImage }) => {
+  const btnRef = useRef(null);
+
+  const handleClick = () => {
+    console.log(btnRef.current);
+    setCurrentImage(btnRef.current.src);
+    openModal(btnRef);
+  };
+  return (
+    <>
+      <img ref={btnRef} src={photo} alt={photo} onClick={() => handleClick()} />
+      <style jsx>{`
+        img {
+          object-fit: contain;
+          border: 1px solid white;
+          width: 100%;
+        }
+      `}</style>
+    </>
+  );
+};
+
 const MobileCarousel = ({ photos }) => {
+  const [currentImage, setCurrentImage] = useState(null);
+
+  const { modalProps, open } = useModal({ background: '#0d0d0df9' });
+
   return (
     <>
       <Carousel
@@ -31,23 +58,36 @@ const MobileCarousel = ({ photos }) => {
         swipeable={true}
         ssr={true}
         removeArrowOnDeviceType={['tablet', 'mobile']}>
-        {photos.map((photo) => (
-          <div className='photo-wrapper' key={photo}>
-            <img src={photo} alt={photo} />
-          </div>
-        ))}
+        {photos.map((photo) => {
+          const ref = useRef(null);
+          return (
+            <div ref={ref} className='photo-wrapper' key={photo} id={photo}>
+              <Image openModal={open} photo={photo} setCurrentImage={setCurrentImage} />
+            </div>
+          );
+        })}
       </Carousel>
+      <Modal {...modalProps}>
+        <div className='modal-image-container'>
+          <img src={currentImage} alt={currentImage} className='modal-image' />
+        </div>
+      </Modal>
       <style jsx>{`
         .photo-wrapper {
           width: 95%;
           margin: 0 auto;
         }
-        .photo-wrapper img {
-          object-fit: contain;
+        .modal-image-container img {
           border: 1px solid white;
-          width: 100%;
+        }
+        .modal-image-container {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       `}</style>
+      <style jsx global>{``}</style>
     </>
   );
 };
