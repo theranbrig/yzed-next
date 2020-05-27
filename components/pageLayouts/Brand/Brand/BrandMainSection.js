@@ -10,6 +10,7 @@ import ModelViewerController from '../../../reusableStyledComponents/ModelViewer
 const photos = ['testimg_1-min.jpg', 'testimg_2-min.jpg', 'testimg_3-min.jpg'];
 
 const BrandMainSection = ({ model }) => {
+  const [lightMode, setLightMode] = useState(false);
   const photos = [
     {
       id: `${model.name} Detail View 1`,
@@ -30,11 +31,11 @@ const BrandMainSection = ({ model }) => {
       max: `https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/${model.imageSlug}_image_3_max.jpg`,
     },
   ];
-  console.log(photos);
+
   return (
     <>
-      <div className='main-container'>
-        <ModelViewerController model={model} />
+      <div className={lightMode ? 'light main-container' : 'main-container'}>
+        <ModelViewerController model={model} lightMode={lightMode} setLightMode={setLightMode} />
         <div className='brand'>
           <div className='brand-title'>
             <h1>YZED x RESERVED Eco Aware</h1>
@@ -58,13 +59,16 @@ const BrandMainSection = ({ model }) => {
           color: ${theme.colors.white};
           padding-bottom: 80px;
         }
+        .light.main-container {
+          background-color: ${theme.colors.white};
+          color: ${theme.colors.black};
+        }
         .brand-title {
           display: flex;
           flex-direction: row;
           align-items: center;
           font-size: 1.5rem;
           font-family: ${theme.fonts.main};
-          color: ${theme.colors.white};
         }
         .brand-title h1 {
           font-weight: 500;
@@ -81,6 +85,9 @@ const BrandMainSection = ({ model }) => {
           width: 80px;
           border-bottom: 1px solid ${theme.colors.white};
           margin: 0 30px;
+        }
+        .light .dash {
+          border-color: ${theme.colors.black};
         }
         @media (max-width: 640px) {
           .main-container {

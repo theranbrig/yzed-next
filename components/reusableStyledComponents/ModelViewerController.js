@@ -3,9 +3,9 @@ import AnimatedModelViewer from './AnimatedModelViewer';
 import StationaryModelViewer from './StationaryModelViewer';
 import theme from '../../utilities/theme';
 
-const ModelViewerController = ({ model }) => {
+const ModelViewerController = ({ model, lightMode, setLightMode }) => {
   const [showAnimated, setShowAnimated] = useState(false);
-  const [lightMode, setLightMode] = useState(false);
+  
   return (
     <>
       <div className={lightMode ? 'control-container light' : 'control-container'}>
@@ -89,10 +89,10 @@ const ModelViewerController = ({ model }) => {
           padding: 5px 10px;
           border-radius: 22px;
           min-width: 150px;
-          font-size: 16px;
-          line-height: 16px;
+          font-size: 1rem;
+          line-height: 1rem;
           letter-spacing: 0.2em;
-          font-weight: 300;
+          font-weight: 500;
           margin-right: 20px;
           background: 1px solid ${theme.colors.black};
         }
