@@ -75,6 +75,7 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
         }
         p {
           font-weight: 100;
+          margin: 0;
         }
         .toggle-light-button {
           border-radius: 10px;
@@ -100,6 +101,15 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
           border: 1px solid ${theme.colors.white};
           background: ${theme.colors.black};
           color: ${theme.colors.white};
+        }
+        @media (max-width: 640px) {
+          .dark-light-buttons,
+          .animated-buttons {
+            min-height: 102px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+          }
         }
       `}</style>
     </>

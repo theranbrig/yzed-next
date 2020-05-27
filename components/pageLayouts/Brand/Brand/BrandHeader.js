@@ -312,13 +312,13 @@ const BrandHeader = () => {
         }
         /* Small (sm) */
         @media (max-width: 640px) {
-          /* ... */
-          .header-container {
+          .header-container,
+          .header-container.collapsed {
             display: grid;
             grid-template-columns: 1fr;
             align-items: center;
             width: 100%;
-            height: 110px;
+            height: 100px;
             animation: none;
             padding: 0;
           }
@@ -338,7 +338,7 @@ const BrandHeader = () => {
           .logo {
             background-color: ${theme.colors.black};
             width: 100%;
-            padding: 40px 5% 0;
+            padding: 30px 5% 30px;
             margin-bottom: 80px;
           }
           .right-content {
