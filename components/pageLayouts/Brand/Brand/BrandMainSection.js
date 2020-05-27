@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ModelViewer from '../../../ModelViewer';
 import theme from '../../../../utilities/theme';
-import MobileCarousel from '../../../MobileCarousel';
+import MobileCarousel from '../../../ImageCarousel';
 
 const photos = ['testimg_1-min.jpg', 'testimg_2-min.jpg', 'testimg_3-min.jpg'];
 

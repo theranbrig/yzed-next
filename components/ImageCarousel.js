@@ -2,6 +2,8 @@ import React, { useEffect, useContext, useState, useRef } from 'react';
 import Carousel from 'react-multi-carousel';
 import { useModal, Modal } from 'react-morphing-modal';
 
+import ProgressiveImage from './ProgressiveImage';
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -27,8 +29,7 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
   const btnRef = useRef(null);
 
   const handleClick = () => {
-    console.log(btnRef.current);
-    setCurrentImage(photo.max);
+    setCurrentImage({ mini: photo.mini, max: photo.max });
     openModal(btnRef);
   };
   return (
@@ -45,8 +46,8 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
   );
 };
 
-const MobileCarousel = ({ photos }) => {
-  const [currentImage, setCurrentImage] = useState(null);
+const ImageCarousel = ({ photos }) => {
+  const [currentImage, setCurrentImage] = useState({ mini: '', max: '' });
 
   const { modalProps, open } = useModal({ background: '#0d0d0df9' });
 
@@ -69,7 +70,7 @@ const MobileCarousel = ({ photos }) => {
       </Carousel>
       <Modal {...modalProps}>
         <div className='modal-image-container'>
-          <img src={currentImage} alt={currentImage} className='modal-image' />
+          <ProgressiveImage preview={currentImage.mini} image={currentImage.max} />
         </div>
       </Modal>
       <style jsx>{`
@@ -88,9 +89,17 @@ const MobileCarousel = ({ photos }) => {
           align-items: center;
         }
       `}</style>
-      <style jsx global>{``}</style>
+      <style jsx global>{`
+        .photo-wrapper {
+          width: 98%;
+          margin: 0 auto;
+        }
+        .modal-image-container img {
+          width: 100%;
+        }
+      `}</style>
     </>
   );
 };
 
-export default MobileCarousel;
+export default ImageCarousel;
