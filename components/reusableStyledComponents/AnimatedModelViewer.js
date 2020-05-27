@@ -1,8 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 
 import Head from 'next/head';
 
 const AnimatedModelViewer = ({ model }) => {
+  const modelRef = useRef(null);
+  useEffect(() => {
+    console.log(modelRef);
+  }, []);
   return (
     <>
       <Head>
@@ -15,6 +19,7 @@ const AnimatedModelViewer = ({ model }) => {
       </Head>
       <div className='model-viewer-container'>
         <model-viewer
+          ref={modelRef}
           src={model.animatedGlbFile}
           alt={model.name}
           preload
@@ -34,6 +39,9 @@ const AnimatedModelViewer = ({ model }) => {
           height: 750px;
           margin: 0 auto;
           --poster-color: transparent;
+        }
+        model-viewer .userInput {
+          outline-color: white !important;
         }
       `}</style>
     </>

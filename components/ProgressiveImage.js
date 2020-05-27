@@ -9,10 +9,8 @@ const ProgressiveImage = ({ preview, image }) => {
     const loadingImage = new Image();
     loadingImage.src = src;
     loadingImage.onload = () => {
-      setTimeout(() => {
-        setCurrentImage(loadingImage.src);
-        setLoading(false);
-      }, 500);
+      setCurrentImage(loadingImage.src);
+      setLoading(false);
     };
   };
 
@@ -23,7 +21,7 @@ const ProgressiveImage = ({ preview, image }) => {
   const style = (loading) => {
     return {
       transition: '0.5s filter linear',
-      filter: `${loading ? 'blur(50px)' : ''}`,
+      filter: `${loading ? 'blur(10000px)' : ''}`,
     };
   };
 

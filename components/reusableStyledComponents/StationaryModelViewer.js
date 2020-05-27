@@ -1,8 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 
 import Head from 'next/head';
 
 const StationaryModelViewer = ({ model }) => {
+  const modelRef = useRef(null);
+  useEffect(() => {
+    console.log(modelRef.current.loaded);
+  }, [modelRef]);
   return (
     <>
       <Head>
@@ -15,6 +19,7 @@ const StationaryModelViewer = ({ model }) => {
       </Head>
       <div className='model-viewer-container'>
         <model-viewer
+          ref={modelRef}
           src={model.glbFile}
           ios-src={model.usdzFile}
           alt={model.name}
