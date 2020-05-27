@@ -12,7 +12,7 @@ const Navigation = ({ collapsed }) => {
             to='introduction'
             spy={true}
             smooth={true}
-            duration={200}
+            duration={250}
             className='nav-scroll-link'
             activeClass='active'>
             INTRODUCTION
@@ -21,7 +21,7 @@ const Navigation = ({ collapsed }) => {
             to='model'
             spy={true}
             smooth={true}
-            duration={200}
+            duration={250}
             className='nav-scroll-link'
             activeClass='active'>
             3D MODEL
@@ -30,7 +30,7 @@ const Navigation = ({ collapsed }) => {
             to='about'
             spy={true}
             smooth={true}
-            duration={200}
+            duration={250}
             className='nav-scroll-link'
             activeClass='active'>
             <a>ABOUT US</a>
@@ -56,16 +56,16 @@ const Navigation = ({ collapsed }) => {
       <style jsx global>{`
         a.nav-scroll-link {
           font-weight: 100;
-          padding: 10px 0px 10px 0;
+          padding: 10px 0px 2px 0;
           margin-left: 20px;
           text-decoration: none;
           color: ${theme.colors.black};
         }
         .collapsed a.nav-scroll-link {
-          color: white;
+          color: ${theme.colors.white};
         }
         a.active {
-          border-bottom: 1px solid;
+          border-bottom: 0.5px solid;
         }
       `}</style>
     </>

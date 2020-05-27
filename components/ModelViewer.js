@@ -28,9 +28,8 @@ const ModelViewer = ({ model }) => {
           padding: 20px 0;
         }
         model-viewer {
-          width: 600px;
+          width: 100%;
           height: 750px;
-          max-width: 100%;
           margin: 0 auto;
           --poster-color: transparent;
         }
