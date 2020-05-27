@@ -1,16 +1,41 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import Link from 'next/link';
 import theme from '../../utilities/theme';
-import ActiveLink from '../reusableStyledComponents/ActiveLink';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 const Navigation = ({ collapsed }) => {
   return (
     <>
       <div className={collapsed ? 'navigation-container collapsed' : 'navigation-container'}>
-        <a href='/#introduction'>INTRODUCTION</a>
-        <a href='/#model'>3D MODEL</a>
-        <a href='/#about'>ABOUT US</a>
+        <nav>
+          <Link
+            to='introduction'
+            spy={true}
+            smooth={true}
+            duration={200}
+            className='nav-scroll-link'
+            activeClass='active'>
+            INTRODUCTION
+          </Link>
+          <Link
+            to='model'
+            spy={true}
+            smooth={true}
+            duration={200}
+            className='nav-scroll-link'
+            activeClass='active'>
+            3D MODEL
+          </Link>
+          <Link
+            to='about'
+            spy={true}
+            smooth={true}
+            duration={200}
+            className='nav-scroll-link'
+            activeClass='active'>
+            <a>ABOUT US</a>
+          </Link>
+        </nav>
       </div>
       <style jsx>{`
         .navigation-container {
@@ -20,25 +45,26 @@ const Navigation = ({ collapsed }) => {
           align-items: start;
           margin-top: 50px;
         }
-        a {
-          font-weight: 100;
-          padding: 10px 20px 10px 0;
-          text-decoration: none;
-          color: ${theme.colors.black};
-        }
-        .collapsed a {
-          color: white;
-        }
+
         /* Small (sm) */
         @media (max-width: 640px) {
-          /* ... */
           .navigation-container {
             display: none;
           }
         }
       `}</style>
       <style jsx global>{`
-        a.selected {
+        a.nav-scroll-link {
+          font-weight: 100;
+          padding: 10px 0px 10px 0;
+          margin-left: 20px;
+          text-decoration: none;
+          color: ${theme.colors.black};
+        }
+        .collapsed a.nav-scroll-link {
+          color: white;
+        }
+        a.active {
           border-bottom: 1px solid;
         }
       `}</style>
