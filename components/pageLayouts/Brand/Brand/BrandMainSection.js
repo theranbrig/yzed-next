@@ -4,6 +4,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ModelViewer from '../../../ModelViewer';
 import theme from '../../../../utilities/theme';
 import MobileCarousel from '../../../ImageCarousel';
+import StationaryModelViewer from '../../../reusableStyledComponents/StationaryModelViewer';
+import ModelViewerController from '../../../reusableStyledComponents/ModelViewerController';
 
 const photos = ['testimg_1-min.jpg', 'testimg_2-min.jpg', 'testimg_3-min.jpg'];
 
@@ -32,7 +34,7 @@ const BrandMainSection = ({ model }) => {
   return (
     <>
       <div className='main-container'>
-        <ModelViewer model={model} />
+        <ModelViewerController model={model} />
         <div className='brand'>
           <div className='brand-title'>
             <h1>YZED x RESERVED Eco Aware</h1>

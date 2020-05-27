@@ -42,7 +42,7 @@ const BrandAbout = () => {
           <p className='or'>or</p>
           <a
             className='blank-link'
-            href='http://www.orimi.com/pdf-test.pdf'
+            href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/MANIFESTO_PDF.pdf'
             target='_blank'
             rel='noopener noreferrer'>
             DOWNLOAD MANIFESTO

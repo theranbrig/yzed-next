@@ -22,8 +22,8 @@ const Home = ({ product }) => {
       usdzFile: product.fields.usdzFile.stringValue,
       id: product.name.slice(63),
       imageSlug: product.fields.imageSlug.stringValue,
+      animatedGlbFile: product.fields.animatedGlbFile.stringValue,
     };
-    console.log(model);
     setMainProduct(model);
     setLoading(false);
   }, [currentMarker]);
