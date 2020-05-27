@@ -5,7 +5,7 @@ import theme from '../../utilities/theme';
 
 const ModelViewerController = ({ model, lightMode, setLightMode }) => {
   const [showAnimated, setShowAnimated] = useState(false);
-  
+
   return (
     <>
       <div className={lightMode ? 'control-container light' : 'control-container'}>
@@ -94,10 +94,11 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
           letter-spacing: 0.2em;
           font-weight: 500;
           margin-right: 20px;
-          background: 1px solid ${theme.colors.black};
+          border: 1px solid ${theme.colors.black};
+          background: ${theme.colors.white};
         }
         .filled {
-          border-color: ${theme.colors.white};
+          border: 1px solid ${theme.colors.white};
           background: ${theme.colors.black};
           color: ${theme.colors.white};
         }
