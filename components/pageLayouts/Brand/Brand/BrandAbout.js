@@ -65,6 +65,7 @@ const BrandAbout = () => {
         .contact {
           width: 60%;
           margin: 0 auto;
+          text-align: center;
         }
         .contact h2 {
           text-align: center;
@@ -72,7 +73,7 @@ const BrandAbout = () => {
         }
         .contact a {
           text-align: center;
-          display: block;
+          display: inline-block;
         }
         p {
           font-weight: 100;
@@ -98,17 +99,16 @@ const BrandAbout = () => {
         }
         a.blank-link {
           color: ${theme.colors.black};
-          padding: 5px;
+          padding: 5px 0;
           position: relative;
           text-decoration: none;
-          width: 100%;
         }
         a.blank-link:after {
           content: '';
-          width: 60%;
+          width: 100%;
           border-bottom: 1px solid black;
           position: absolute;
-          left: calc(20%);
+          left: 0;
           bottom: 0;
         }
         .or {
