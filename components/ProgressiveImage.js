@@ -22,7 +22,7 @@ const ProgressiveImage = ({ preview, image }) => {
 
   return (
     <img
-      style={{ filter: `${loading ? 'blur(10px)' : ''}`, transition: '0.5s filter linear' }}
+      style={{ filter: `${loading ? 'blur(10px)' : ''}`, transition: '1s filter linear' }}
       src={currentImage}
       alt={currentImage}
     />
