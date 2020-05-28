@@ -115,7 +115,7 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
           border: 1px solid ${theme.colors.black};
           background: ${theme.colors.white};
           color: ${theme.colors.black};
-          box-shadow: inset 0 0 0 1px ${theme.colors.white}, inset 0 0 0 2px ${theme.colors.black};
+          box-shadow: inset 0 0 0 2px ${theme.colors.white}, inset 0 0 0 4px ${theme.colors.black};
         }
         @media (max-width: 640px) {
           .dark-light-buttons {

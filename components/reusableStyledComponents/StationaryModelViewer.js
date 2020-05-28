@@ -28,7 +28,7 @@ const StationaryModelViewer = ({ model }) => {
           camera-controls
           ar
           exposure={0.5}
-          poster={'yzed_logo_loading.gif'}
+          poster={'LOADING_SVG-01.svg'}
           interaction-policy='allow-when-focused'></model-viewer>
       </div>
       <style jsx global>{`
@@ -40,6 +40,10 @@ const StationaryModelViewer = ({ model }) => {
           height: 750px;
           margin: 0 auto;
           --poster-color: transparent;
+        }
+        model-viewer #default-poster {
+          border: 5px solid red !important;
+          background-size: cover !important;
         }
       `}</style>
     </>

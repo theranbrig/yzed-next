@@ -25,7 +25,7 @@ const AnimatedModelViewer = ({ model }) => {
           preload
           auto-rotate
           camera-controls
-          poster={'yzed_logo_loading.gif'}
+          poster={'LOADING_SVG-01.svg'}
           exposure={0.5}
           interaction-policy='allow-when-focused'
           autoplay></model-viewer>
