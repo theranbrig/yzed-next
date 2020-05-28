@@ -88,6 +88,7 @@ const BrandAbout = () => {
           width: 80%;
           margin: 0 auto;
           border: 1px solid ${theme.colors.black};
+          transition: all 0.3s ease;
         }
         a {
           letter-spacing: 0.2em;
@@ -96,6 +97,7 @@ const BrandAbout = () => {
         a.black-link:hover {
           background-color: ${theme.colors.white};
           color: ${theme.colors.black};
+          transition: all 0.3s ease;
         }
         a.blank-link {
           color: ${theme.colors.black};

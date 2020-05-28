@@ -4,9 +4,8 @@ import Head from 'next/head';
 
 const StationaryModelViewer = ({ model }) => {
   const modelRef = useRef(null);
-  useEffect(() => {
-    console.log(modelRef.current.loaded);
-  }, [modelRef]);
+  const [loading, setLoading] = useState(false);
+
   return (
     <>
       <Head>
@@ -14,10 +13,11 @@ const StationaryModelViewer = ({ model }) => {
           type='module'
           src='https://unpkg.com/@google/model-viewer/dist/model-viewer.js'></script>
         <script
-          nomodule
+          noModule
           src='https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js'></script>
       </Head>
       <div className='model-viewer-container'>
+        {loading && <h1>Loading</h1>}
         <model-viewer
           ref={modelRef}
           src={model.glbFile}
@@ -26,10 +26,10 @@ const StationaryModelViewer = ({ model }) => {
           preload
           auto-rotate
           camera-controls
+          ar
           exposure={0.5}
           poster={'y-logo.png'}
-          interaction-policy='allow-when-focused'
-          ar></model-viewer>
+          interaction-policy='allow-when-focused'></model-viewer>
       </div>
       <style jsx global>{`
         .model-viewer-container {

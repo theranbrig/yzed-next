@@ -5,7 +5,7 @@ import Head from 'next/head';
 const AnimatedModelViewer = ({ model }) => {
   const modelRef = useRef(null);
   useEffect(() => {
-    console.log(modelRef);
+    console.log('LOAD', modelRef.current);
   }, []);
   return (
     <>
