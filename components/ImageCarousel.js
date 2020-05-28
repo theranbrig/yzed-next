@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState, useRef } from 'react';
 import Carousel from 'react-multi-carousel';
 import { useModal, Modal } from 'react-morphing-modal';
+import theme from '../utilities/theme';
 
 import ProgressiveImage from './ProgressiveImage';
 
@@ -46,7 +47,7 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
   );
 };
 
-const ImageCarousel = ({ photos }) => {
+const ImageCarousel = ({ photos, lightMode }) => {
   const [currentImage, setCurrentImage] = useState({ mini: '', max: '' });
 
   const { modalProps, open } = useModal({ background: '#0d0d0df9' });
@@ -62,8 +63,16 @@ const ImageCarousel = ({ photos }) => {
         {photos.map((photo) => {
           const ref = useRef(null);
           return (
-            <div ref={ref} className='photo-wrapper' key={photo.id}>
-              <Image openModal={open} photo={photo} setCurrentImage={setCurrentImage} />
+            <div
+              ref={ref}
+              className={lightMode ? 'light photo-wrapper' : 'photo-wrapper'}
+              key={photo.id}>
+              <Image
+                openModal={open}
+                photo={photo}
+                setCurrentImage={setCurrentImage}
+                lightMode={lightMode}
+              />
             </div>
           );
         })}
@@ -79,7 +88,7 @@ const ImageCarousel = ({ photos }) => {
           margin: 0 auto;
         }
         .modal-image-container img {
-          border: 1px solid white;
+          border: 1px solid ${theme.colors.white};
           margin: 5px;
         }
         .modal-image-container {
@@ -96,6 +105,9 @@ const ImageCarousel = ({ photos }) => {
         }
         .modal-image-container img {
           width: 100%;
+        }
+        .light.photo-wrapper img {
+          border-color: ${theme.colors.black};
         }
       `}</style>
     </>
