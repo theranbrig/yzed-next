@@ -2,31 +2,40 @@ import React, { useEffect, useContext, useState } from 'react';
 import AnimatedModelViewer from './AnimatedModelViewer';
 import StationaryModelViewer from './StationaryModelViewer';
 import theme from '../../utilities/theme';
+import SwitchSelector from 'react-switch-selector';
 
 const ModelViewerController = ({ model, lightMode, setLightMode }) => {
   const [showAnimated, setShowAnimated] = useState(false);
+  const options = [
+    {
+      label: 'Stationary',
+      value: false,
+    },
+    {
+      label: 'Walking',
+      value: true,
+    },
+  ];
 
+  const onChange = (newValue) => {
+    setShowAnimated(newValue);
+  };
   return (
     <>
       <div className={lightMode ? 'control-container light' : 'control-container'}>
-        {showAnimated ? (
-          <AnimatedModelViewer model={model} />
-        ) : (
-          <StationaryModelViewer model={model} />
-        )}
         <div className='controls'>
-          <div className='animated-buttons'>
-            <button
-              className={!showAnimated ? 'toggle-animated-button filled' : 'toggle-animated-button'}
-              onClick={() => setShowAnimated(false)}>
-              Stationary
-            </button>
-            <button
-              className={showAnimated ? 'toggle-animated-button filled' : 'toggle-animated-button'}
-              onClick={() => setShowAnimated(true)}>
-              Walking
-            </button>
+          <div className='toggle-animated-buttons'>
+            <SwitchSelector
+              onChange={onChange}
+              options={options}
+              initialSelectedIndex={0}
+              backgroundColor={lightMode ? '#fff' : '#0d0d0d'}
+              fontColor={lightMode ? '#0d0d0d' : '#fff'}
+              selectedFontColor={lightMode ? '#fff' : '#0d0d0d'}
+              selectedBackgroundColor={lightMode ? '#0d0d0d' : '#fff'}
+            />
           </div>
+
           <div className='dark-light-buttons'>
             <div className='toggle-button-container'>
               <button
@@ -46,13 +55,25 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
             </div>
           </div>
         </div>
+        {showAnimated ? (
+          <AnimatedModelViewer model={model} />
+        ) : (
+          <StationaryModelViewer model={model} />
+        )}
       </div>
       <style jsx>{`
+        .control-container {
+          position: relative;
+        }
         .controls {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
+          position: absolute;
+          top: 40px;
+          width: 100%;
+          z-index: 1000;
         }
         .light {
           background: ${theme.colors.white};
@@ -69,6 +90,10 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
           flex-direction: row;
           justify-content: flex-end;
         }
+        .toggle-animated-buttons {
+          height: 30px;
+          width: 200px;
+        }
         button,
         p {
           display: inline;
@@ -81,36 +106,30 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
           border-radius: 15px;
           height: 30px;
           width: 30px;
-          background: ${theme.colors.white};
-          border: 1px solid ${theme.colors.black};
+          background: ${theme.colors.black};
+          border: 1px solid ${theme.colors.white};
           margin-right: 5px;
         }
-        .toggle-animated-button {
-          padding: 5px 10px;
-          border-radius: 22px;
-          min-width: 150px;
-          font-size: 1rem;
-          line-height: 1rem;
-          letter-spacing: 0.2em;
-          font-weight: 500;
-          min-height: 30px;
-          margin-right: 20px;
+        .filled {
           border: 1px solid ${theme.colors.black};
           background: ${theme.colors.white};
-        }
-        .filled {
-          border: 1px solid ${theme.colors.white};
-          background: ${theme.colors.black};
-          color: ${theme.colors.white};
+          color: ${theme.colors.black};
         }
         @media (max-width: 640px) {
-          .dark-light-buttons,
-          .animated-buttons {
+          .dark-light-buttons {
             min-height: 102px;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
           }
+        }
+      `}</style>
+      <style jsx global>{`
+        .react-switch-selector-wrapper {
+          border: 1px solid white;
+        }
+        .light .react-switch-selector-wrapper {
+          border: 1px solid black;
         }
       `}</style>
     </>
