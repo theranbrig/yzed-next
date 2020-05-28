@@ -29,22 +29,14 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
               onChange={onChange}
               options={options}
               initialSelectedIndex={0}
-              backgroundColor={lightMode ? '#fff' : '#0d0d0d'}
-              fontColor={lightMode ? '#0d0d0d' : '#fff'}
-              selectedFontColor={lightMode ? '#fff' : '#0d0d0d'}
-              selectedBackgroundColor={lightMode ? '#0d0d0d' : '#fff'}
+              backgroundColor={'#0d0d0d'}
+              fontColor={'#fff'}
+              selectedFontColor={'#0d0d0d'}
+              selectedBackgroundColor={'#fff'}
             />
           </div>
 
           <div className='dark-light-buttons'>
-            <div className='toggle-button-container'>
-              <button
-                className={lightMode ? 'toggle-light-button filled' : 'toggle-light-button'}
-                onClick={() => setLightMode(true)}
-                aria-label='Toggle Light'
-              />
-              <p>Light</p>
-            </div>
             <div className='toggle-button-container'>
               <button
                 className={!lightMode ? 'toggle-light-button filled' : 'toggle-light-button'}
@@ -52,6 +44,14 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
                 aria-label='Toggle Dark'
               />
               <p>Dark</p>
+            </div>
+            <div className='toggle-button-container'>
+              <button
+                className={lightMode ? 'toggle-light-button filled' : 'toggle-light-button'}
+                onClick={() => setLightMode(true)}
+                aria-label='Toggle Light'
+              />
+              <p>Light</p>
             </div>
           </div>
         </div>
@@ -109,11 +109,13 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
           background: ${theme.colors.black};
           border: 1px solid ${theme.colors.white};
           margin-right: 5px;
+          box-shadow: none;
         }
         .filled {
           border: 1px solid ${theme.colors.black};
           background: ${theme.colors.white};
           color: ${theme.colors.black};
+          box-shadow: inset 0 0 0 1px ${theme.colors.white}, inset 0 0 0 2px ${theme.colors.black};
         }
         @media (max-width: 640px) {
           .dark-light-buttons {

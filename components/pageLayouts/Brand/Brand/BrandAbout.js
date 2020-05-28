@@ -37,7 +37,7 @@ const BrandAbout = () => {
           <a
             className='black-link'
             href='mailto:yzed.official@gmail.com?subject=Interested in Learning More'>
-            SIGN UP FOR UPDATES
+            SEND US AN EMAIL
           </a>
           <p className='or'>or</p>
           <a
