@@ -57,10 +57,12 @@ const BrandMainSection = ({ model }) => {
           padding: 0 10%;
           color: ${theme.colors.white};
           padding-bottom: 80px;
+          transition: all 0.3s ease;
         }
         .light.main-container {
           background-color: ${theme.colors.white};
           color: ${theme.colors.black};
+          transition: all 0.3s ease;
         }
         .brand-title {
           display: flex;

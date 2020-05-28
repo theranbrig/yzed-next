@@ -195,12 +195,6 @@ const BrandHeader = () => {
             height: 40px !important;
             fill: white;
           }
-          .outline-svg .st0 {
-            fill: none;
-            stroke: ${theme.colors.white};
-            stroke-width: 1;
-            stroke-miterlimit: 10;
-          }
           .logo {
             background-color: ${theme.colors.black};
             width: 100%;
