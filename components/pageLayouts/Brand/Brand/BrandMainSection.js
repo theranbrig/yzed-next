@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import ModelViewer from '../../../ModelViewer';
 import theme from '../../../../utilities/theme';
 import ImageCarousel from '../../../ImageCarousel';
-import StationaryModelViewer from '../../../reusableStyledComponents/StationaryModelViewer';
+
 import ModelViewerController from '../../../reusableStyledComponents/ModelViewerController';
 
 const photos = ['testimg_1-min.jpg', 'testimg_2-min.jpg', 'testimg_3-min.jpg'];
