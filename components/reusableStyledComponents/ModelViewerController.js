@@ -83,12 +83,13 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
           display: flex;
           flex-direction: row;
           align-items: center;
-          margin-left: 20px;
+          justify-content: space-between;
         }
         .dark-light-buttons {
+          width: 170px;
           display: flex;
           flex-direction: row;
-          justify-content: flex-end;
+          justify-content: space-between;
         }
         .toggle-animated-buttons {
           height: 30px;
@@ -120,9 +121,14 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
         @media (max-width: 640px) {
           .dark-light-buttons {
             min-height: 102px;
-            display: flex;
-            flex-direction: column;
             justify-content: space-around;
+          }
+          .controls {
+            height: 150px;
+            flex-direction: column;
+            justify-content: flex-end;
+            bottom: 0px;
+            top: calc(100% - 150px);
           }
         }
       `}</style>
