@@ -130,9 +130,6 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
         .react-switch-selector-wrapper {
           border: 1px solid white;
         }
-        .light .react-switch-selector-wrapper {
-          border: 1px solid black;
-        }
       `}</style>
     </>
   );
