@@ -104,6 +104,7 @@ const BrandAbout = () => {
           padding: 5px 0;
           position: relative;
           text-decoration: none;
+          text-indent: 0.1em;
         }
         a.blank-link:after {
           content: '';
