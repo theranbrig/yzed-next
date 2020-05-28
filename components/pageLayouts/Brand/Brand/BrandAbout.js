@@ -112,6 +112,11 @@ const BrandAbout = () => {
           position: absolute;
           left: 0;
           bottom: 0;
+          transition: all 1s;
+        }
+        a.blank-link:hover:after {
+          width: 0%;
+          transition: all 1s;
         }
         .or {
           color: ${theme.colors.mediumGrey};
