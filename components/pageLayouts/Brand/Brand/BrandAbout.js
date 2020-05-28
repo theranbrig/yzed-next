@@ -28,7 +28,7 @@ const BrandAbout = () => {
           <p>
             That’s all for now,
             <br />
-            XOXO from the YZED team.
+            Cheers, YZED team.
           </p>
         </div>
         <div className='contact'>

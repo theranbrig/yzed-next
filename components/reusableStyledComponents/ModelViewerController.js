@@ -128,7 +128,7 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
       `}</style>
       <style jsx global>{`
         .react-switch-selector-wrapper {
-          border: 1px solid white;
+          border: 1px solid white !important;
         }
       `}</style>
     </>
