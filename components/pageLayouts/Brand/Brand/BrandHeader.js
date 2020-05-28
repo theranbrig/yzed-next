@@ -103,7 +103,8 @@ const BrandHeader = () => {
       </div>
       <style jsx>{`
         .header-container {
-          display: flex;
+          display: grid;
+          grid-template-columns: 50% 50%;
           margin: 0 auto;
           padding: 0 10%;
           align-items: center;
@@ -121,14 +122,21 @@ const BrandHeader = () => {
           transition: all 1s ease;
           color: ${theme.colors.black};
           opacity: 0;
+          height: 0px;
         }
         .message {
           opacity: 1;
           color: ${theme.colors.black};
           transition: all 1s ease;
+          height: 130px
         }
         .spacer {
           height: 69px;
+          transition: all 1s ease;
+        }
+        .collapsed .spacer {
+          height: 0px;
+          transition: all 1s ease;
         }
         .logo {
           width: 50%;

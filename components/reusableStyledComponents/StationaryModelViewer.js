@@ -28,7 +28,7 @@ const StationaryModelViewer = ({ model }) => {
           camera-controls
           ar
           exposure={0.5}
-          poster={'y-logo.png'}
+          poster={'yzed_logo_loading.gif'}
           interaction-policy='allow-when-focused'></model-viewer>
       </div>
       <style jsx global>{`

@@ -57,12 +57,14 @@ const Navigation = ({ collapsed }) => {
         a.nav-scroll-link {
           font-weight: 100;
           padding: 10px 0px 2px 0;
-          margin-left: 20px;
+          margin-right: 20px;
           text-decoration: none;
           color: ${theme.colors.black};
+          transition: all 1s ease;
         }
         .collapsed a.nav-scroll-link {
           color: ${theme.colors.white};
+          transition: all 1s ease;
         }
         a.active {
           border-bottom: 0.5px solid;
