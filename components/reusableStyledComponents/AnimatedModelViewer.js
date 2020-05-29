@@ -25,7 +25,7 @@ const AnimatedModelViewer = ({ model }) => {
           preload
           auto-rotate
           camera-controls
-          poster={'LOADING_SVG-01.svg'}
+          poster={'loading-image.png'}
           exposure={0.5}
           interaction-policy='allow-when-focused'
           autoplay></model-viewer>
@@ -39,9 +39,6 @@ const AnimatedModelViewer = ({ model }) => {
           height: 750px;
           margin: 0 auto;
           --poster-color: transparent;
-        }
-        model-viewer .userInput {
-          outline-color: white !important;
         }
       `}</style>
     </>

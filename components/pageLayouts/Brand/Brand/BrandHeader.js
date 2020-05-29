@@ -128,7 +128,7 @@ const BrandHeader = () => {
           opacity: 1;
           color: ${theme.colors.black};
           transition: all 1s ease;
-          height: 130px
+          height: 130px;
         }
         .spacer {
           height: 69px;
@@ -141,12 +141,6 @@ const BrandHeader = () => {
         .logo {
           width: 50%;
         }
-        .expanded .logo svg {
-          height: 60px;
-        }
-        .collapsed .logo svg {
-          height: 40px;
-        }
         .right-content {
           height: 100%;
           display: flex;
@@ -155,10 +149,12 @@ const BrandHeader = () => {
         }
         .expanded .filled-svg,
         .expanded .outline-svg {
+          height: 60px;
           transition: all 1s ease;
         }
         .collapsed .filled-svg,
         .collapsed .outline-svg {
+          height: 40px;
           fill: ${theme.colors.white};
           transition: all 1s ease;
         }
