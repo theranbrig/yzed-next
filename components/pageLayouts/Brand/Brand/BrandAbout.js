@@ -136,6 +136,14 @@ const BrandAbout = () => {
             padding: 10px;
           }
         }
+        @media screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 900px) {
+          /* Your CSS Here*/
+          .about-container {
+            width: 90%;
+            grid-template-columns: 1fr;
+            padding: 30px 0;
+          }
+        }
         @media (max-width: 640px) {
           .about-container {
             width: 90%;

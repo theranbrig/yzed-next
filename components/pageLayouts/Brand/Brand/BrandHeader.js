@@ -184,6 +184,16 @@ const BrandHeader = () => {
             height: 40px;
           }
         }
+        @media screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 900px) {
+          /* Your CSS Here*/
+          .header-container {
+            width: 100%;
+            padding: 5%;
+          }
+          .logo svg {
+            height: 30px !important;
+          }
+        }
         /* Small (sm) */
         @media (max-width: 640px) {
           .header-container,
@@ -200,7 +210,6 @@ const BrandHeader = () => {
 
           .logo svg {
             fill: white;
-
             height: 40px;
           }
           .logo {
@@ -223,6 +232,19 @@ const BrandHeader = () => {
           }
         }
       `}</style>
+      <style jsx global>
+        {`
+          @media screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 900px) {
+            .expanded .navigation-container {
+              margin-top: 50px;
+              animation: all 1s;
+            }
+            .collapsed .navigation-container {
+              animation: all 1s;
+              margin-top: 30px;
+            }
+        `}
+      </style>
     </>
   );
 };
