@@ -45,8 +45,6 @@ const Navigation = ({ collapsed }) => {
           align-items: start;
           margin-top: 50px;
         }
-
-        /* Small (sm) */
         @media (max-width: 640px) {
           .navigation-container {
             display: none;
@@ -68,6 +66,11 @@ const Navigation = ({ collapsed }) => {
         }
         a.active {
           border-bottom: 0.5px solid;
+        }
+        @media (max-width: 768px) {
+          .nav-scroll-link {
+            font-size: 0.75rem;
+          }
         }
       `}</style>
     </>

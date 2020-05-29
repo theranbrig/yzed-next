@@ -168,10 +168,14 @@ const BrandHeader = () => {
           margin: -15px 0 0 60px;
           z-index: 1;
         }
-
         /* Medium (md) */
         @media (max-width: 768px) {
-          /* ... */
+          .message h2 {
+            font-size: 1.1rem;
+          }
+          .message p {
+            font-size: 0.8rem;
+          }
           .logo svg {
             height: 40px !important;
           }
@@ -195,6 +199,7 @@ const BrandHeader = () => {
           .header-container.expanded {
             height: 110px;
           }
+
           .logo svg {
             height: 40px !important;
             fill: white;
@@ -211,19 +216,12 @@ const BrandHeader = () => {
           .filled-svg {
             margin: 0;
           }
-          .expanded .outline-svg {
+          .outline-svg {
             margin: -10px 0 0 40px;
             height: 40px;
           }
-          .collapsed .outline-svg .st0,
-          .filled-svg,
-          .outline-svg,
-          .collapsed .outline-svg,
-          .collapsed .filled-svg,
-          .expanded .filled-svg,
-          .expanded .outline-svg,
-          .collapsed svg,
-          .expanded svg {
+          .collapsed,
+          .expanded {
             animation: none;
           }
         }

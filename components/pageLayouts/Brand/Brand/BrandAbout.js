@@ -124,6 +124,18 @@ const BrandAbout = () => {
           font-size: 0.8rem;
           text-align: center;
         }
+        @media (max-width: 768px) {
+          .about-container {
+            width: 90%;
+            padding: 30px 0;
+          }
+          .contact {
+            width: 100%;
+          }
+          .about {
+            padding: 10px;
+          }
+        }
         @media (max-width: 640px) {
           .about-container {
             width: 90%;
