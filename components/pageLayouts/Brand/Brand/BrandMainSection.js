@@ -37,11 +37,12 @@ const BrandMainSection = ({ model }) => {
         <ModelViewerController model={model} lightMode={lightMode} setLightMode={setLightMode} />
         <div className='brand'>
           <div className='brand-title'>
-            <h1>YZED x RESERVED Eco Aware</h1>
+            <h1>YZED x {model.brandName}</h1>
             <div className='dash'></div>
             <div className='about'>
-              <p>Crushed viscose printed dress</p>
-              <p>Cupro rich floral print blazer</p>
+              {model.descriptions &&
+                model.descriptions.length &&
+                model.descriptions.map((description) => <p>{description}</p>)}
             </div>
           </div>
           <div className='mobile-carousel'>

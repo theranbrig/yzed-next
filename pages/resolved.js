@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
-const Home = ({ product }) => {
+const Resolved = ({ product }) => {
   const [loading, setLoading] = useState(false);
   const [displayDate, setDisplayDate] = useState('');
 
@@ -16,13 +16,17 @@ const Home = ({ product }) => {
 
   useEffect(() => {
     setLoading(true);
+
     const model = {
-      name: product.fields.brandName.stringValue,
+      brandName: product.fields.brandName.stringValue,
       glbFile: product.fields.glbFile.stringValue,
       usdzFile: product.fields.usdzFile.stringValue,
       id: product.name.slice(63),
       imageSlug: product.fields.imageSlug.stringValue,
       animatedGlbFile: product.fields.animatedGlbFile.stringValue,
+      descriptions: product.fields.productDescriptions.arrayValue.values.map(
+        (value) => value.stringValue
+      ),
     };
     setMainProduct(model);
     setLoading(false);
@@ -48,4 +52,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Home;
+export default Resolved;
