@@ -55,13 +55,18 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
             </div>
           </div>
         </div>
-        {showAnimated ? (
-          <AnimatedModelViewer model={model} />
-        ) : (
-          <StationaryModelViewer model={model} />
-        )}
+        <div className='viewer-container'>
+          {showAnimated ? (
+            <AnimatedModelViewer model={model} />
+          ) : (
+            <StationaryModelViewer model={model} />
+          )}
+        </div>
       </div>
       <style jsx>{`
+        .viewer-container {
+          min-height: 700px;
+        }
         .control-container {
           position: relative;
         }

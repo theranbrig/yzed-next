@@ -33,6 +33,7 @@ const AnimatedModelViewer = ({ model }) => {
       <style jsx global>{`
         .model-viewer-container {
           padding: 20px 0;
+          min-height: 200px;
         }
         model-viewer {
           width: 100%;
