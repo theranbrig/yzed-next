@@ -124,6 +124,9 @@ const BrandAbout = () => {
           font-size: 0.8rem;
           text-align: center;
         }
+         {
+          /* Tablet Portrait */
+        }
         @media (max-width: 768px) {
           .about-container {
             width: 90%;
@@ -136,13 +139,30 @@ const BrandAbout = () => {
             padding: 10px;
           }
         }
+         {
+          /* Tablet Landscape */
+        }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+          .about-container {
+            grid-gap: 20px;
+            padding: 30px 0;
+          }
+          .contact {
+            width: 90%;
+          }
+        }
+         {
+          /* Mobile Landscape */
+        }
         @media screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 900px) {
-          /* Your CSS Here*/
           .about-container {
             width: 90%;
             grid-template-columns: 1fr;
             padding: 30px 0;
           }
+        }
+         {
+          /* Mobile Portrait */
         }
         @media (max-width: 640px) {
           .about-container {

@@ -90,6 +90,21 @@ const BrandMainSection = ({ model }) => {
         .light .dash {
           border-color: ${theme.colors.black};
         }
+         {
+          /* Tablet Landscape */
+        }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+          h1 {
+            font-size: 1.8rem;
+          }
+          .about p {
+            font-size: 0.9rem;
+          }
+        }
+
+         {
+          /* Portrait Mobile */
+        }
         @media (max-width: 640px) {
           .main-container {
             padding: 0px 5%;
