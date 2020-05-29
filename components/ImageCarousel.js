@@ -40,6 +40,9 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
         <ProgressiveClickImage preview={photo.mini} image={photo.thumb} callBack={handleClick} />
       </div>
       <style jsx global>{`
+        .click-image-wrapper {
+          min-height: 100px;
+        }
         .click-image-wrapper img {
           object-fit: contain;
           border: 1px solid white;

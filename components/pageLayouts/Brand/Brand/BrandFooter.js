@@ -8,7 +8,7 @@ const BrandFooter = () => {
       <div className='footer-container'>
         <p>
           <strong>YZED</strong> is part of{' '}
-          <a href='https://101.global' target='_blank' rel='noopener noreferrer'>
+          <a href='https://www.101.global/?lang=en' target='_blank' rel='noopener noreferrer'>
             101Global
           </a>{' '}
           and powered by{' '}
