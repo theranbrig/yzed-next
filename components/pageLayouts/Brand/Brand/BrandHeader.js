@@ -187,28 +187,26 @@ const BrandHeader = () => {
         /* Small (sm) */
         @media (max-width: 640px) {
           .header-container,
-          .header-container.collapsed {
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
+          .header-container.collapsed,
+          .header-container.expanded {
+            display: block;
+            box-sizing: border-box;
             width: 100%;
-            height: 100px;
+            height: 100%;
             animation: none;
             padding: 0;
-          }
-          .header-container.expanded {
-            height: 110px;
+            margin: 0;
           }
 
           .logo svg {
-            height: 40px !important;
             fill: white;
+
+            height: 40px;
           }
           .logo {
             background-color: ${theme.colors.black};
             width: 100%;
-            padding: 30px 5% 30px;
-            margin-bottom: 80px;
+            padding: 30px 20px 0px;
           }
           .right-content {
             display: none;
@@ -218,7 +216,6 @@ const BrandHeader = () => {
           }
           .outline-svg {
             margin: -10px 0 0 40px;
-            height: 40px;
           }
           .collapsed,
           .expanded {
