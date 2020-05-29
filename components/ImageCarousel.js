@@ -4,6 +4,7 @@ import { useModal, Modal } from 'react-morphing-modal';
 import theme from '../utilities/theme';
 
 import ProgressiveImage from './ProgressiveImage';
+import ProgressiveClickImage from './ProgressiveClickImage';
 
 const responsive = {
   superLargeDesktop: {
@@ -35,9 +36,11 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
   };
   return (
     <>
-      <img ref={btnRef} src={photo.thumb} alt={photo.id} onClick={() => handleClick()} />
-      <style jsx>{`
-        img {
+      <div ref={btnRef} className='click-image-wrapper'>
+        <ProgressiveClickImage preview={photo.mini} image={photo.thumb} callBack={handleClick} />
+      </div>
+      <style jsx global>{`
+        .click-image-wrapper img {
           object-fit: contain;
           border: 1px solid white;
           width: 100%;

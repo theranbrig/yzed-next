@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const ProgressiveImage = ({ preview, image }) => {
+const ProgressiveClickImage = ({ preview, image, callBack, ref }) => {
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
 
@@ -22,12 +22,13 @@ const ProgressiveImage = ({ preview, image }) => {
 
   return (
     <img
-
+      ref={ref}
       style={{ filter: `${loading ? 'blur(10px)' : ''}`, transition: '1s filter linear' }}
       src={currentImage}
       alt={currentImage}
+      onClick={() => callBack()}
     />
   );
 };
 
-export default ProgressiveImage;
+export default ProgressiveClickImage;
