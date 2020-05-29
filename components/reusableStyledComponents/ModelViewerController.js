@@ -93,7 +93,7 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
         }
         .toggle-animated-buttons {
           height: 30px;
-          width: 200px;
+          width: 250px;
         }
         button,
         p {
@@ -110,7 +110,7 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
           background: ${theme.colors.black};
           border: 1px solid ${theme.colors.white};
           margin-right: 5px;
-          box-shadow: none;
+          box-shadow: 0 0 1px 1px white;
         }
         .filled {
           border: 1px solid ${theme.colors.black};
@@ -135,6 +135,7 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
       <style jsx global>{`
         .react-switch-selector-wrapper {
           border: 1px solid white !important;
+          box-shadow: 0 0 1px 1px white;
         }
       `}</style>
     </>
